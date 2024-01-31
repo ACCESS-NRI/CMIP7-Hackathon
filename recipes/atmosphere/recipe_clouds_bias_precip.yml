@@ -1,0 +1,76 @@
+# ESMValTool
+# recipe_clouds_bias.yml
+---
+documentation:
+  title: Annual mean climatologies (MMM)
+
+  description: |
+    Diagnostics of clouds and hydrological cycle multi-model mean, mean bias,
+    absolute bias, relative bias.
+
+  authors:
+    - lauer_axel
+
+  maintainer:
+    - lauer_axel
+
+  references:
+    - flato13ipcc
+
+  projects:
+    - embrace
+
+datasets:
+  - {dataset: ACCESS1-0, project: CMIP5, exp: historical, ensemble: r1i1p1,
+     start_year: 1986, end_year: 2005}
+  - {dataset: ACCESS1-3, project: CMIP5, exp: historical, ensemble: r1i1p1,
+     start_year: 1986, end_year: 2005}
+  - {dataset: bcc-csm1-1, project: CMIP5, exp: historical, ensemble: r1i1p1,
+     start_year: 1986, end_year: 2005}
+
+
+preprocessors:
+  clim:
+    regrid:
+      target_grid: 2x2
+      scheme: linear
+    mask_fillvalues:
+      threshold_fraction: 0.95
+    multi_model_statistics:
+      span: overlap
+      statistics: [mean]
+      exclude: [reference_dataset]
+
+
+diagnostics:
+
+  # **********************************************************************
+  # Flato et al. (2013) - IPCC AR5, chap. 9
+  # similar to fig. 9.4
+  # **********************************************************************
+  # Multi model mean, multi model mean bias, mean absolute error, and
+  # mean relative error (geographical ditributions)
+  # **********************************************************************
+
+  clouds_bias_pr:
+    title: Precipitation climatology (MMM)
+    description: IPCC AR5 Ch. 9, Fig. 9.4 (precipitation)
+    themes:
+      - clouds
+    realms:
+      - atmos
+    variables:
+      pr:
+        preprocessor: clim
+        reference_dataset: GPCP-V2.2
+        mip: Amon
+    additional_datasets:
+      - {dataset: GPCP-V2.2, project: obs4MIPs, level: L3, start_year: 1986, end_year: 2005, tier: 1}
+    scripts:
+      clim:
+        script: clouds/clouds_bias.ncl
+        projection: Robinson
+        timemean: annualclim
+        plot_abs_diff: true
+        plot_rel_diff: true
+
