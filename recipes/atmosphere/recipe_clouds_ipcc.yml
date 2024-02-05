@@ -15,21 +15,23 @@ documentation:
     - lauer_axel
 
   references:
-    - flato13ipcc
+    - flato13ipcc  # this will take the bibtex file to add to output
 
   projects:
     - esmval
 
 datasets:
-  ## using cmip6 datasets-
-  - {dataset: ACCESS-ESM1-5, activity: CMIP ,project: CMIP6,  grid: gn,  #dataset -ACCESS-ESM1.5
+  # replaced dataset list in original recipe to use some cmip6 datasets-
+  - {dataset: ACCESS-ESM1-5, activity: CMIP ,project: CMIP6,  grid: gn,  
       exp: historical, ensemble: r1i1p1f1, start_year: 1986, end_year: 2005}
-  - {dataset: UKESM1-0-LL, activity: CMIP ,project: CMIP6,  grid: gn,  #
+
+  - {dataset: UKESM1-0-LL, activity: CMIP ,project: CMIP6,  grid: gn,  
       exp: historical, ensemble: r1i1p1f2, start_year: 1986, end_year: 2005}
-  - {dataset: CESM2, activity: CMIP ,project: CMIP6,  grid: gn,  # institution NCAR
+  - {dataset: CESM2, activity: CMIP ,project: CMIP6,  grid: gn,
       exp: historical, ensemble: r1i1p1f1, start_year: 1986, end_year: 2005}
 
-
+# reference doc on these preprocessors:
+# https://docs.esmvaltool.org/projects/ESMValCore/en/latest/recipe/preprocessor.html
 preprocessors:
   clim:
     regrid:
@@ -37,6 +39,8 @@ preprocessors:
       scheme: linear
     mask_fillvalues:
       threshold_fraction: 0.95
+    # multi model mean of the above datasets. 
+    # exclude reference dataset defined in the diagnostic variables below
     multi_model_statistics:
       span: overlap
       statistics: [mean]
