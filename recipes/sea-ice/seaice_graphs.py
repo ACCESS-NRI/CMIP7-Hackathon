@@ -14,7 +14,7 @@ import pandas as pd
 
 import os
 import logging
-from esmvaltool.diag_scripts.shared import run_diagnostic, Datasets, Variables
+from esmvaltool.diag_scripts.shared import run_diagnostic
 from esmvaltool.diag_scripts.shared._base import get_plot_filename
 
 
@@ -53,7 +53,7 @@ def min_and_max(ds):
     annual_min_max_ds=ds.si_area.groupby('time.year').apply(min_and_max_year)
     return annual_min_max_ds
 
-def plot_trend(model_min_max_dt, obs_a, minmax):
+def plot_trend(model_min_max_dt,mod_label, obs_a, minmax):
     """
     cube: iris cube of precipitaion anomalies with only time dimension.
     change to xarray
@@ -61,9 +61,9 @@ def plot_trend(model_min_max_dt, obs_a, minmax):
 
     figure, axes = plt.subplots()
     
-    # both min and max # multiple models? 
+    # both min and max # multiple models? modeldt list? 
     # add note for years change?
-    model_min_max_dt[minmax].plot(label='ACCESS-OM2')
+    model_min_max_dt[minmax].plot(label=mod_label)
 
     if minmax == 'max':
         obs_a.cdr_area.groupby('time.year').max().plot(label='Obs CDR')
@@ -132,12 +132,9 @@ def main(cfg):
     """Compute sea ice area for each input dataset."""
 
     input_data = cfg['input_data'].values()
-    variables = Variables(cfg)
 
     data = []
-    logger.info(f"!!! {df} variables: {variables}.. !!")
 
-    # Ex
     for dataset in input_data:
         # Load the data
         input_file = [dataset['filename'], dataset['short_name'], dataset['dataset']]
@@ -149,17 +146,18 @@ def main(cfg):
 
     logger.info(df)
     for fp,sn, dt in df.itertuples(index=False):
-        if dt == 'ACCESS-OM2':  # other models?
-            if sn == 'areacello':
-                area_mod = xr.open_dataset(fp) 
-            else:
-                mod_si = xr.open_dataset(fp)
-        elif dt == 'NSIDC-G02202-sh':    
+        if dt == 'NSIDC-G02202-sh':    
             if sn == 'areacello':
                 area_obs = xr.open_dataset(fp) 
             else:
                 obs_si = xr.open_dataset(fp)
-    
+        else:  # dt == 'ACCESS-OM2':  # other models? #dict object, ls both ds? 
+            if sn == 'areacello':
+                area_mod = xr.open_dataset(fp) 
+            else:
+                mod_si = xr.open_dataset(fp)
+                mod_label = dt
+
     obs_si['areacello'] = area_obs['areacello']
     obs_a = sea_ice_area_obs(obs_si)
 
@@ -169,7 +167,7 @@ def main(cfg):
     model_min_max_dt['year'] = model_min_max_dt.year + 1652  # make years compariable
 
     for m in ['min','max']:  
-        fig = plot_trend(model_min_max_dt, obs_a, m)
+        fig = plot_trend(model_min_max_dt,mod_label, obs_a, m)
         # Save output
         output_path = get_plot_filename(f'{m}_trend', cfg)
         fig.savefig(output_path) 

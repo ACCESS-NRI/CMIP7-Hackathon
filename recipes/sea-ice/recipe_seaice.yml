@@ -1,21 +1,23 @@
 # ESMValTool 
-# 
+# run on normalbw with 5 ncpus run time <1 min
 ---
 documentation:
   title: sea ice area recipe
-  description: This is an example recipe, 
-  converting a COSIMA cookbook recipe with help from Anton Steketee
+  description: |
+    This is an example recipe, 
+    converting a COSIMA cookbook recipe with help from Anton Steketee
 
   authors:
     - chun_felicity
 
+# 2 datasets, dataset name is referred to in diagnostic script - comparing one model to obs
 datasets: 
-# 2 datasets, dataset name is referred to in diagnostic script
-  # - {dataset: ACCESS-ESM1-5, activity: CMIP ,project: CMIP6,  grid: gn,  #dataset -ACCESS-ESM1.5
-  # exp: piControl, ensemble: r1i1p1f1, start_year: 306, end_year: 366} # years?
-  
-  - {dataset: ACCESS-OM2, activity: OMIP ,project: CMIP6,  grid: gn,  #dataset -ACCESS-OM2-025
-  exp: omip2, ensemble: r1i1p1f1, start_year: 306, end_year: 366} # 1958 -2018 #re-adjust time +1652
+
+  - {dataset: ACCESS-ESM1-5, activity: CMIP ,project: CMIP6,  grid: gn,  #dataset -ACCESS-ESM1.5
+  exp: piControl, ensemble: r1i1p1f1, start_year: 306, end_year: 366} # years?
+  # - {dataset: ACCESS-OM2, activity: OMIP ,project: CMIP6,  grid: gn,  #dataset -ACCESS-OM2-025
+  # exp: omip2, ensemble: r1i1p1f1, start_year: 306, end_year: 366} # 1958 -2018 #re-adjust time +1652
+
   - {dataset: NSIDC-G02202-sh, project: OBS6, tier: 3,
   type: reanaly, version: 4, start_year: 1979, end_year: 2018}
 
@@ -25,6 +27,7 @@ diagnostics:
   aus_map:
     description: mapping aus ocean
     variables:
+    ## 2 variables - sea ice concentration and cell area to compute sea ice area
       aus_sst:
         short_name: siconc
         mip: SImon
@@ -34,5 +37,5 @@ diagnostics:
 
     scripts:
       graph:
-        script: sea-ice/seaice_graphs.py
+        script: /home/189/fc6164/esmValTool/CMIP7-Hackathon/recipes/sea-ice/seaice_graphs.py  # update location of script
  
