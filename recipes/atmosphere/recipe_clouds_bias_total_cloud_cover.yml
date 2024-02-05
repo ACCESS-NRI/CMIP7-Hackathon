@@ -21,12 +21,20 @@ documentation:
     - embrace
 
 datasets:
-  - {dataset: ACCESS1-0, project: CMIP5, exp: historical, ensemble: r1i1p1,
-     start_year: 1986, end_year: 2005}
-  - {dataset: ACCESS1-3, project: CMIP5, exp: historical, ensemble: r1i1p1,
-     start_year: 1986, end_year: 2005}
-  - {dataset: bcc-csm1-1, project: CMIP5, exp: historical, ensemble: r1i1p1,
-     start_year: 1986, end_year: 2005}
+  # - {dataset: ACCESS1-0, project: CMIP5, exp: historical, ensemble: r1i1p1,
+  #    start_year: 1986, end_year: 2005}
+  # - {dataset: ACCESS1-3, project: CMIP5, exp: historical, ensemble: r1i1p1,
+  #    start_year: 1986, end_year: 2005}
+  # - {dataset: bcc-csm1-1, project: CMIP5, exp: historical, ensemble: r1i1p1,
+  #    start_year: 1986, end_year: 2005}
+
+## using cmip6 datasets
+  - {dataset: ACCESS-ESM1-5, activity: CMIP ,project: CMIP6,  grid: gn,  #dataset -ACCESS-ESM1.5
+      exp: historical, ensemble: r1i1p1f1, start_year: 1986, end_year: 2005}
+  - {dataset: UKESM1-0-LL, activity: CMIP ,project: CMIP6,  grid: gn,  #
+      exp: historical, ensemble: r1i1p1f2, start_year: 1986, end_year: 2005}
+  - {dataset: CESM2, activity: CMIP ,project: CMIP6,  grid: gn,  # institution NCAR
+      exp: historical, ensemble: r1i1p1f1, start_year: 1986, end_year: 2005}
 
 
 preprocessors:
@@ -67,6 +75,8 @@ diagnostics:
       - {dataset: MODIS-1-0, project: obs4MIPs, level: L3, start_year: 2001, end_year: 2010, tier: 1}
     scripts:
       clim:
-        <<: *clim_settings
+        script: clouds/clouds_bias.ncl
+        projection: Robinson
+        timemean: annualclim
         plot_abs_diff: true
         plot_rel_diff: true

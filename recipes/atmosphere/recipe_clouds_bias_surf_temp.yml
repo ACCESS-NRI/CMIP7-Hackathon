@@ -52,31 +52,32 @@ diagnostics:
 
   # **********************************************************************
   # Flato et al. (2013) - IPCC AR5, chap. 9
-  # similar to fig. 9.4
+  # similar to fig. 9.2 a/b/c
   # **********************************************************************
-  # Multi model mean, multi model mean bias, mean absolute error, and
-  # mean relative error (geographical ditributions)
+  # Multi model mean, multi model mean bias, and mean absolute error
+  # (geographical distributions)
   # **********************************************************************
 
-  clouds_bias_pr:
-    title: Precipitation climatology (MMM)
-    description: IPCC AR5 Ch. 9, Fig. 9.4 (precipitation)
+  clouds_bias_tas:
+    title: Near-surface temperature climatology (MMM)
+    description: IPCC AR5 Ch. 9, Fig. 9.2 (near-surface temperature)
     themes:
       - clouds
     realms:
       - atmos
     variables:
-      pr:
+      tas:
         preprocessor: clim
-        reference_dataset: GPCP-V2.2
+        reference_dataset: ERA-Interim
         mip: Amon
     additional_datasets:
-      - {dataset: GPCP-V2.2, project: obs4MIPs, level: L3, start_year: 1986, end_year: 2005, tier: 1}
+      - {dataset: ERA-Interim, project: OBS6, type: reanaly, version: 1,
+         start_year: 1986, end_year: 2005, tier: 3}
     scripts:
       clim:
         script: clouds/clouds_bias.ncl
         projection: Robinson
         timemean: annualclim
         plot_abs_diff: true
-        plot_rel_diff: true
+        plot_rel_diff: false
 
