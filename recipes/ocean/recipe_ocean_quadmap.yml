@@ -23,8 +23,8 @@ documentation:
 
 datasets:
   # working datasets
-  - {dataset: HadGEM2-CC, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 2001, end_year: 2003, }
-  - {dataset: HadGEM2-ES, project: CMIP5, exp: historical, ensemble: r1i1p1, start_year: 2001, end_year: 2003, }
+        - {dataset: ACCESS-ESM1-5, project: CMIP6, exp: historical, ensemble: r1i1p1f1, start_year: 2001, end_year: 2003, grid: gn}
+        - {dataset: ACCESS-CM2, project: CMIP6, exp: historical, ensemble: r1i1p1f1, start_year: 2001, end_year: 2003, grid: gn}
 
 
 preprocessors:
@@ -60,6 +60,6 @@ diagnostics:
      scripts:
        Global_Ocean_map: &Global_Ocean_map
          script: ocean/diagnostic_maps_quad.py
-         control_model: {dataset: HadGEM2-CC, project: CMIP5, mip: Omon, exp: historical, ensemble: r1i1p1}
-         exper_model: {dataset: HadGEM2-ES, project: CMIP5, mip: Omon, exp: historical, ensemble: r1i1p1}
+         control_model: {dataset: ACCESS-ESM1-5, project: CMIP6, mip: Omon, exp: historical, ensemble: r1i1p1f1, grid: gn}
+         exper_model: {dataset: ACCESS-CM2, project: CMIP6, mip: Omon, exp: historical, ensemble: r1i1p1f1, grid: gn}
          observational_dataset: {dataset: ATSR, project: obs4MIPs,}
