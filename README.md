@@ -49,7 +49,7 @@ If working correctly, you should see:
 Running recipe: recipes/ocean/maps/map1.yml
 107769xxx.gadi-pbs
 ```
-This tells us that, in this case, the *ESMValTool* recipe *map1* has been successfully submitted to Gadi for processing. 
+This tells us that, in this case, the *ESMValTool* recipe *map1* has been successfully submitted to Gadi for processing and the job number is 107769xxx. 
 To check the status of this job, you can enter either of the following:
 ```
 qstat 107769xxx
