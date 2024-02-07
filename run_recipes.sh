@@ -2,10 +2,10 @@
 
 . ./admin/bash_utilities.sh
 
-atmos=("recipe_clouds_bias_precip.yml" "recipe_clouds_bias_surf_temp.yml" "recipe_clouds_bias_total_cloud_cover.yml" "recipe_clouds_ipcc.yml")
-land=("recipe_runoff_et.yml")
-seaice=("recipe_seaice.yml")
-general=("recipe_climwip_test_performance_sigma.yml"  "recipe_monitor.yml" "recipe_perfmetrics_CMIP56_simple_v3.yml")
+atmos=("recipes/atmosphere/recipe_clouds_bias_precip.yml" "recipes/atmosphere/recipe_clouds_bias_surf_temp.yml" "recipes/atmosphere/recipe_clouds_bias_total_cloud_cover.yml" "recipes/atmosphere/recipe_clouds_ipcc.yml")
+land=("recipes/land/recipe_runoff_et.yml")
+seaice=("recipes/seaice/recipe_seaice.yml")
+general=("recipes/general/recipe_climwip_test_performance_sigma.yml"  "recipes/general/recipe_monitor.yml" "recipes/general/recipe_perfmetrics_CMIP56_simple_v3.yml")
 
 # Ocean recipes
 
