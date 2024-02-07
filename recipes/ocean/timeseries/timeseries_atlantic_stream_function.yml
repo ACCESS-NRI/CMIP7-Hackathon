@@ -23,9 +23,6 @@ documentation:
     - ukesm
 
 preprocessors:
-  prep_timeseries_drake:
-    extract_named_regions:
-      regions: drake_passage
 
   prep_transect:
     custom_order: true
@@ -42,40 +39,7 @@ preprocessors:
       operator: mean
 
 diagnostics:
-  # --------------------------------------------------
-  # Time series diagnostics
-  # --------------------------------------------------
-  diag_timeseries_amoc:
-    description: atlantic_meridional_overturning_circulation
-    variables:
-      amoc:
-        mip: Omon
-        derive: true
-        force_derivation: false
-    additional_datasets:
-      - {project: CMIP6, exp: historical, dataset: ACCESS-ESM1-5, ensemble: r1i1p1f1, grid: gn}
-    scripts:
-      AMOC_timeseries:
-        script: ocean/diagnostic_timeseries.py
-        moving_average: 6 years
   
-  diag_timeseries_drake:
-    description: Drake_passge_current
-    variables:
-      mfo:
-        preprocessor: prep_timeseries_drake
-        mip: Omon
-    additional_datasets:
-      - {project: CMIP6, exp: historical, dataset: ACCESS-ESM1-5, ensemble: r1i1p1f1, grid: gn}
-    scripts:
-     Drake_timeseries:
-        script: ocean/diagnostic_timeseries.py
-        moving_average: 6 years
-
-
-  # --------------------------------------------------
-  # Transect diagnostics
-  # --------------------------------------------------
   diag_transects:
     description: Stream function zonal mean
     variables:
