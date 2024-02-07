@@ -28,10 +28,10 @@ documentation:
     - crescendo
 
 datasets:
-  - {dataset: MPI-ESM-LR, project: CMIP5, exp: historical, ensemble: r1i1p1,
-     start_year: 1970, end_year: 2000}
-  - {dataset: IPSL-CM5B-LR, project: CMIP5, exp: historical, ensemble: r1i1p1,
-     start_year: 1970, end_year: 2000}
+  - {dataset: ACCESS-ESM1-5, project: CMIP6, exp: historical, ensemble: r1i1p1f1,
+    start_year: 1970, end_year: 2000, grid: gn}
+  - {dataset: ACCESS-CM2, project: CMIP6, exp: historical, ensemble: r1i1p1f1,
+    start_year: 1970, end_year: 2000, grid: gn}
 
 diagnostics:
   catchment_analysis:
