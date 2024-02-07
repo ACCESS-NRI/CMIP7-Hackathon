@@ -10,7 +10,7 @@ models=( "${maps[@]}" "${transects[@]}" "${timeseries[@]}" "${depths[@]}" )
 
 for model in ${models[@]};
 do
-	qsub -v script=$model -N$(basename -- $model .yml) job.pbs
+	qsub -v script=$model -N$(basename -- $model .yml) -e admin/logs/$(basename -- $model .yml).stderr -o admin/logs/$(basename -- $model .yml).stdout  job.pbs
 done
 
 
