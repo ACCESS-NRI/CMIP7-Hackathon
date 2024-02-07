@@ -11,7 +11,7 @@ recipes=( "${maps[@]}" "${transects[@]}" "${timeseries[@]}" "${depths[@]}" )
 
 
 
-for recipe in ${recipess[@]};
+for recipe in ${recipes[@]};
 do
   run_recipe $recipe
 done

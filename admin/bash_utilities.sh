@@ -15,7 +15,7 @@ pbs_job=$(cat <<-END
 module use /g/data/xp65/public/modules
 module load esmvaltool
 
-esmvaltool run --max_parallel_tasks=1 --output_dir=/scratch/tm70/rb5533/esmvaltool_outputs \$recipe
+esmvaltool run --output_dir=/scratch/tm70/rb5533/esmvaltool_outputs \$recipe
 
 END
 
