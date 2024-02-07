@@ -26,8 +26,9 @@ function run_recipe(){
 
 	if test -f $recipe; then
 	    qsub -v recipe=$recipe -N$(basename -- $recipe .yml) -e admin/logs/$(basename -- $recipe .yml).stderr -o admin/logs/$(basename -- $recipe .yml).stdout <<<"$pbs_job"
-        else
-            echo $recipe does not exist, please check the path
+            echo "Running recipe: $recipe"
+	else
+	    echo "$recipe does not exist, please check the path."
 	fi
 
 }
