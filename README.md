@@ -30,7 +30,7 @@ python3 check_hackathon.py
 Please make sure you see a result of "OK" next to each line before proceeding.
 
 
-## Running a recipe on Gadi
+## Running an ESMValTool recipe on Gadi
 
 Individual *ESMValTool* recipes can be automatically set up and run on Gadi using the following 1-line command. Simply replace [recipe path] with the relative path to a recipe found in the [recipes folder](https://github.com/ACCESS-NRI/CMIP7-Hackathon/tree/main/recipes).
 
