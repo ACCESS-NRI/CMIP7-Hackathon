@@ -29,6 +29,10 @@ datasets:
 preprocessors:
   
   prep_transect_3: # For extracting a transect
+    custom_order: true
+    regrid:
+      target_grid: 2x2
+      scheme: linear
     climate_statistics:
       operator: mean
     extract_transect: # Atlantic Meridional Transect
