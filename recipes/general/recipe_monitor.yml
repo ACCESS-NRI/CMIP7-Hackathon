@@ -12,7 +12,7 @@ documentation:
 
 
 datasets:
-  - {project: CMIP6, dataset: ACCESS-ESM1-5, exp: historical, ensemble: r1i1p1f1, start_year: 1850, end_year: 2014}
+        - {project: CMIP6, dataset: ACCESS-ESM1-5, exp: historical, ensemble: r1i1p1f1, start_year: 1850, end_year: 2014, grid: gn}
 
 preprocessors:
   timeseries_regular:
