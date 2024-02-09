@@ -29,15 +29,16 @@ datasets:
 preprocessors:
   
   prep_transect_3: # For extracting a transect
-    custom_order: true
-    regrid:
-      target_grid: 2x2
-      scheme: linear
+   # custom_order: true
+   #  regrid:
+     #  target_grid: 2x2
+     #  scheme: linear
     climate_statistics:
       operator: mean
-    extract_transect: # Atlantic Meridional Transect
-      latitude: [-50.,50.]
-      longitude: 332.
+    extract_trajectory: # Atlantic Meridional Transect. Using extract_trajectory as it suports irregular grids.
+      latitudes: [-50.,50.]
+      longitudes: [332.,332]
+      number_points: 4              # VERY SLOW with high numbers!
 
 
 diagnostics:
