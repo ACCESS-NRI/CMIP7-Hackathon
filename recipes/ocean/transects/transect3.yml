@@ -37,7 +37,7 @@ preprocessors:
       operator: mean
     extract_trajectory: # Atlantic Meridional Transect. Using extract_trajectory as it suports irregular grids.
       latitudes: [-50.,50.]
-      longitudes: [332.,332]
+      longitudes: [332.,332.]
       number_points: 4              # VERY SLOW with high numbers!
 
 
