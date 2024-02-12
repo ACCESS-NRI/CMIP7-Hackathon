@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 import os
 import grp
+import subprocess
+from pathlib import Path
 
 required = {
 
@@ -8,12 +10,36 @@ required = {
         "fs38": "CMIP6 ACCESS publications",
         "al33": "CMIP5 replicas",
         "rr3": "CMIP5 ACCESS publications",
-        "r87": "CMIP3",
         "ct11": "ACCESS-NRI replica collection",
         "xp65": "ACCESS-NRI analysis environments",
         "nf33": "ACCESS-NRI training"
         }
 
+
+pbs_job = """#!/bin/bash -l 
+#PBS -S /bin/bash
+#PBS -P iq82
+#PBS -l storage=gdata/fs38+gdata/oi10+gdata/rr3+gdata/xp65+gdata/al33+gdata/rt52+gdata/zz93+scratch/nf33+gdata/ct11
+#PBS -l wd
+#PBS -q copyq
+#PBS -l walltime=04:00:00
+#PBS -l mem=64GB
+#PBS -l ncpus=1
+
+module use /g/data/xp65/public/modules
+module load esmvaltool
+
+esmvaltool run --output_dir=/scratch/nf33/\$USER/esmvaltool_outputs \$recipe
+"""
+
+def run_recipe(recipe_path):
+
+    if os.path.isfile(recipe_path):
+        recipe_name=Path(recipe_path).stem
+        subprocess.run(f"qsub -v recipe={recipe_path} -N{recipe_name} -e admin/logs/{recipe_name}.stderr -o admin/logs/{recipe_name}.stdout <<< \"{pbs_job}\"", shell=True)
+        print(f"Running recipe: {recipe_path}")
+    else:
+        print("{recipe_path} does not exist, please check the path.")
 
 
 def user_belong_to_group(group):
@@ -70,5 +96,6 @@ if __name__ == '__main__':
     check_all_required_group_memberships(required)
     test_gdata_projects_are_mounted(required)
     test_training_scratch_project_is_mounted("nf33")
-    check_read_access("/g/data/xp65/public/apps/esmvaltool")
+    #check_read_access("/g/data/xp65/public/apps/esmvaltool")
     check_esmvaltool_config_file_exists()
+    #run_recipe("./recipes/general/recipe_monitor.yml")

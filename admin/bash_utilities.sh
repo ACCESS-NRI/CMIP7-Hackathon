@@ -9,7 +9,7 @@ pbs_job=$(cat <<-END
 #PBS -q normal
 #PBS -l walltime=04:00:00
 #PBS -l mem=64GB
-#PBS -l ncpus=12
+#PBS -l ncpus=1
 
 module use /g/data/xp65/public/modules
 module load esmvaltool

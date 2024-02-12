@@ -12,7 +12,7 @@ documentation:
 
 
 datasets:
-        - {project: CMIP6, dataset: ACCESS-ESM1-5, exp: historical, ensemble: r1i1p1f1, start_year: 1850, end_year: 2014, grid: gn}
+        - {project: CMIP6, dataset: ACCESS-ESM1-5, exp: historical, ensemble: r1i1p1f1, start_year: 1950, end_year: 2014, grid: gn}
 
 preprocessors:
   timeseries_regular:
@@ -125,8 +125,7 @@ diagnostics:
     scripts:
       plot: &plot_default
         script: monitor/monitor.py
-        # plot_folder: ~/plots/{expid}/{modeling_realm}/{real_name}
-        # cartopy_data_dir: /esarchive/scratch/Earth/jvegas/cartopy
+        cartopy_data_dir: /g/data/xp65/public/apps/cartopy-data/shapefiles
         plots:
           timeseries: {}
           annual_cycle: {}
