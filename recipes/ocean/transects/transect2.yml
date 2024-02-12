@@ -31,9 +31,10 @@ preprocessors:
   prep_transect_2: # For extracting a transect
     climate_statistics:
       operator: mean
-    extract_transect: # Pacific Equator
-      latitude: 0.
-      longitude: [120., 300.]
+    extract_trajectory: # Pacific Equator. Using extract_trajectory as it supports irregular grids
+      latitudes: [0.,0.]
+      longitudes: [120., 300.]
+      number_points: 4              # VERY SLOW with high numbers!
 
 diagnostics:
   
