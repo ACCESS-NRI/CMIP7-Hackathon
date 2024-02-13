@@ -31,6 +31,8 @@ module use /g/data/xp65/public/modules
 module load esmvaltool
 
 esmvaltool run --output_dir=/scratch/nf33/\$USER/esmvaltool_outputs \$recipe
+
+ln -sfT $(ls -1d /scratch/nf33/\$USER/esmvaltool_outputs/\$(basename \$recipe .yml)_* | tail -1) /scratch/nf33/\$USER/esmvaltool_outputs/\$(basename \$recipe .yml)_latest
 """
 
 atmos=["recipes/atmosphere/recipe_clouds_bias_precip.yml", "recipes/atmosphere/recipe_clouds_bias_surf_temp.yml", "recipes/atmosphere/recipe_clouds_bias_total_cloud_cover.yml", "recipes/atmosphere/recipe_clouds_ipcc.yml"]
