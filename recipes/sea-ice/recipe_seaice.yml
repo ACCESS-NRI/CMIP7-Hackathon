@@ -10,6 +10,8 @@ documentation:
   authors:
     - chun_felicity
 
+  realms:
+    - seaIce
 
 datasets: 
 # these years are comparable to 1958 -2018 # re-adjust years in script (+1652)
