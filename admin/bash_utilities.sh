@@ -15,7 +15,7 @@ module use /g/data/xp65/public/modules
 module load esmvaltool
 
 esmvaltool run --output_dir=/scratch/nf33/\$USER/esmvaltool_outputs \$recipe
-ln -sfT $(ls -1d /scratch/nf33/\$USER/esmvaltool_outputs/\$(basename \$recipe .yml)_* | tail -1) /scratch/nf33/\$USER/esmvaltool_outputs/\$(basename \$recipe .yml)_latest
+ln -sfT \$(ls -1d /scratch/nf33/\$USER/esmvaltool_outputs/\$(basename \$recipe .yml)_* | tail -1) /scratch/nf33/\$USER/esmvaltool_outputs/\$(basename \$recipe .yml)_latest
 
 END
 
