@@ -81,11 +81,14 @@ def user_belong_to_group(group):
 
 def check_all_required_group_memberships(groups):
         
+    print(f"\nChecking that you have access to all required projects:\n")
     for group, description in required.items():
         if user_belong_to_group(group):
-            print(f"{group} OK")
+            print(f"{group}({description}) membership: " + u'\N{check mark}')
         else:
-            print(f"{group} not OK")
+            print(f"{group}({description}) membership: " + u'\N{cross mark}')
+            print(f"Please join {group}")
+    print("\n")
 
 def check_read_access(path):
     print(f"Checking that you have read access on all the files in {path}")
@@ -96,6 +99,7 @@ def check_read_access(path):
         for name in dirs:
             if not os.access(os.path.join(root, name), os.R_OK):
                 print("Missing read access")
+    print("\n")
 
 
 def test_gdata_projects_are_mounted(groups):
@@ -103,17 +107,20 @@ def test_gdata_projects_are_mounted(groups):
     for group, _ in required.items():
         if user_belong_to_group(group):
             if os.path.exists(f"/g/data/{group}"):
-                print(f"gdata {group} is mounted")
+                print(f"gdata {group} is mounted " + u'\N{check mark}')
             else:
-                print(f"gdata {group} is not mounted")
+                print(f"gdata {group} is not mounted " + u'\N{cross mark}')
+    print("\n")
 
 def test_training_scratch_project_is_mounted(proj):
 
+    print(f"Checking that you have read access to /scratch/nf33")
     if user_belong_to_group(proj):
         if os.path.exists(f"/scratch/{proj}"):
-            print(f"scratch {proj} is mounted")
+            print(f"scratch {proj} is mounted " + u'\N{check mark}')
         else:
-            print(f"scratch {proj} is not mounted")
+            print(f"scratch {proj} is not mounted " + u'\N{cross mark}')
+    print("\n")
 
 def check_esmvaltool_config_file_exists():
     print(f"Checking that the esmvaltool config file exist")
@@ -121,11 +128,21 @@ def check_esmvaltool_config_file_exists():
         print("ESMValTool config file is missing")
 
 
+def get_github_repository():
+    USER = os.getenv('USER')
+    dest = f"/scratch/nf33/{USER}/"
+    if not os.path.exists(dest):
+        os.mkdir(dest)
+    if not os.path.exists(dest + "CMIP7-Hackathon"):
+        subprocess.run(f"git clone https://github.com/ACCESS-NRI/CMIP7-Hackathon.git {dest}", shell=True)
+
+
 if __name__ == '__main__':
+    get_github_repository()
     check_all_required_group_memberships(required)
     test_gdata_projects_are_mounted(required)
     test_training_scratch_project_is_mounted("nf33")
-    #check_read_access("/g/data/xp65/public/apps/esmvaltool")
+    ##check_read_access("/g/data/xp65/public/apps/esmvaltool")
     check_esmvaltool_config_file_exists()
-    #run_recipe("./recipes/general/recipe_monitor.yml")
-    run_multiple_recipes(maps)
+    ##run_recipe("./recipes/general/recipe_monitor.yml")
+    #run_multiple_recipes(maps)
