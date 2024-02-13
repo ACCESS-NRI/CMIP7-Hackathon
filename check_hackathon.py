@@ -21,7 +21,7 @@ pbs_job = """#!/bin/bash -l
 #PBS -P iq82
 #PBS -l storage=gdata/fs38+gdata/oi10+gdata/rr3+gdata/xp65+gdata/al33+gdata/rt52+gdata/zz93+scratch/nf33+gdata/ct11
 #PBS -l wd
-#PBS -q copyq
+#PBS -q normal
 #PBS -W block=true
 #PBS -l walltime=04:00:00
 #PBS -l mem=64GB
