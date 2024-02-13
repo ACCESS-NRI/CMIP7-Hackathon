@@ -14,7 +14,7 @@ import pandas as pd
 
 import os
 import logging
-from esmvaltool.diag_scripts.shared import run_diagnostic, Datasets, Variables
+from esmvaltool.diag_scripts.shared import run_diagnostic, save_figure
 from esmvaltool.diag_scripts.shared._base import get_plot_filename
 
 
@@ -108,7 +108,24 @@ def main(cfg):
     mapfig = map_diff(mod_si_dict, obs_si, cfg['months'])
     # Save output
     output_path = get_plot_filename('map_difference', cfg)
-    mapfig.savefig(output_path) 
+    # mapfig.savefig(output_path) # use esmvaltool convenience function
+
+    provenance_record = get_provenance_record(df['filename'].to_list())
+    save_figure(output_path, provenance_record, cfg, figure=mapfig)
+
+def get_provenance_record(ancestor_files):
+    record = {
+        'ancestors': ancestor_files,
+        'authors': [
+            'chun_felicity',
+        ],
+        'caption': '',
+        'domains': ['shpolar'],
+        'plot_types': ['polar'],
+        'references': [],
+        'statistics': ['diff'],
+        }
+    return record
 
 if __name__ == '__main__':
 

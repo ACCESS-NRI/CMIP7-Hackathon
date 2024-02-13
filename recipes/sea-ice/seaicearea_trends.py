@@ -9,7 +9,7 @@ import pandas as pd
 import xarray as xr
 import os
 import logging
-from esmvaltool.diag_scripts.shared import run_diagnostic
+from esmvaltool.diag_scripts.shared import run_diagnostic, save_figure
 from esmvaltool.diag_scripts.shared._base import get_plot_filename
 
 
@@ -121,12 +121,28 @@ def main(cfg):
     obs_si['areacello'] = area_obs['areacello']
     obs_a = sea_ice_area_obs(obs_si)
 
+    provenance_record = get_provenance_record(df['filename'].to_list())
     for m in ['min','max']:
         fig = plot_trend(min_max, obs_a, m)
         # Save output
         output_path = get_plot_filename(f'{m}_trend', cfg)
-        fig.savefig(output_path) 
+        # fig.savefig(output_path) # use esmvaltool convenience function
+        save_figure(output_path, provenance_record, cfg, figure=fig)
 
+
+def get_provenance_record(ancestor_files):
+    record = {
+        'ancestors': ancestor_files,
+        'authors': [
+            'chun_felicity',
+        ],
+        'caption': 'added 1652 years to model years for comparability',
+        'domains': ['shpolar'],
+        'plot_types': ['times'],
+        'references': [],
+        'statistics': ['mean'],
+        }
+    return record
 
 if __name__ == '__main__':
 
