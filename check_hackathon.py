@@ -46,7 +46,9 @@ maps=["recipes/ocean/maps/map1.yml", "recipes/ocean/maps/map2.yml", "recipes/oce
 transects=["recipes/ocean/transects/transect1.yml", "recipes/ocean/transects/transect2.yml", "recipes/ocean/transects/transect3.yml"]
 timeseries=["recipes/ocean/timeseries/timeseries1.yml", "recipes/ocean/timeseries/timeseries2.yml", "recipes/ocean/timeseries/timeseries3.yml", "recipes/ocean/timeseries/timeseries4.yml", "recipes/ocean/timeseries/timeseries5.yml", "recipes/ocean/timeseries/timeseries6.yml", "recipes/ocean/timeseries/timeseries_atlantic_stream_function.yml", "recipes/ocean/timeseries/timeseries_drake.yml"]
 depths=["recipes/ocean/depth_profiles/depth_integration.yml", "recipes/ocean/depth_profiles/depth_profile1.yml", "recipes/ocean/depth_profiles/depth_profile2.yml"]
+ocean = maps + transects + timeseries + depths
 
+all_recipes = atmos + land + seaice + general + ocean 
 
 def _get_pbs_run_command(recipe_path):
         recipe_name=Path(recipe_path).stem
@@ -65,10 +67,10 @@ def run_multiple_recipes(recipes_paths):
     from subprocess import Popen
     commands = [_get_pbs_run_command(recipe_path) for recipe_path in recipes_paths]
     procs = [ Popen(i, shell=True) for i in commands ]
-    for p in procs:
-       p.wait()
-       rc = p.returncode
-       print(f"recipe return {rc} code")
+    #for p in procs:
+    #   p.wait()
+    #   rc = p.returncode
+    #   print(f"recipe return {rc} code")
 
 
 def user_belong_to_group(group):
@@ -122,10 +124,27 @@ def test_training_scratch_project_is_mounted(proj):
             print(f"scratch {proj} is not mounted " + u'\N{cross mark}')
     print("\n")
 
+
+def test_import_xp65_module():
+    print(f"Checking that the xp65 esmvaltool module can be imported:\n")
+    script = """#!/bin/bash
+    module use /g/data/xp65/public/modules
+    module load esmvaltool
+    esmvaltool --help
+    """
+    result = subprocess.run(f"bash <<< \"{script}\"", shell=True)
+
+
 def check_esmvaltool_config_file_exists():
     print(f"Checking that the esmvaltool config file exist")
     if not os.path.exists(os.path.join(os.path.expanduser('~'), ".esmvaltool/config-user.yml")):
         print("ESMValTool config file is missing")
+        script = """#!/bin/bash
+        module use /g/data/xp65/public/modules
+        module load esmvaltool
+        esmvaltool config get_config_user ~/.esmvaltool/config-user.yml
+        """
+        result = subprocess.run(f"bash <<< \"{script}\"", shell=True)
 
 
 def get_github_repository():
@@ -138,11 +157,12 @@ def get_github_repository():
 
 
 if __name__ == '__main__':
-    get_github_repository()
     check_all_required_group_memberships(required)
     test_gdata_projects_are_mounted(required)
     test_training_scratch_project_is_mounted("nf33")
+    # Too long!!!
     ##check_read_access("/g/data/xp65/public/apps/esmvaltool")
+    get_github_repository()
+    test_import_xp65_module()
     check_esmvaltool_config_file_exists()
-    ##run_recipe("./recipes/general/recipe_monitor.yml")
-    #run_multiple_recipes(maps)
+    run_multiple_recipes(all_recipes)
