@@ -3,9 +3,7 @@
 ---
 documentation:
   title: ENSO analysis
-  description: |
-    This is an example recipe, 
-    converting a COSIMA cookbook recipe with help from Anton Steketee
+  description: El Nino Southern Oscillation analysis. 
 
   authors:
     - sullivan_arnold
@@ -13,31 +11,19 @@ documentation:
 
 
 datasets: 
-# these years are comparable to 1958 -2018 # re-adjust years in script (+1652)
-  - {dataset: ACCESS-ESM1-5, activity: CMIP ,project: CMIP6,  grid: gn,
-  exp: piControl, ensemble: r1i1p1f1, start_year: 306, end_year: 366} 
-  - {dataset: ACCESS-OM2, activity: OMIP ,project: CMIP6,  grid: gn,  # -ACCESS-OM2-025
-  exp: omip2, ensemble: r1i1p1f1, start_year: 306, end_year: 366} 
-# observations
-  - {dataset: NSIDC-G02202-sh, project: OBS6, tier: 3,
-  type: reanaly, version: 4, start_year: 1979, end_year: 2018}
+  - {dataset: ACCESS-CM2, activity: CMIP, project: CMIP6, mip: Amon, grid: gn, exp: piControl, 
+  ensemble: r4i1p1f1, version: v20240121, start_year: 1290, end_year: 1295}
+  - {dataset: OBS_HadISST, type: reanaly, mip: Amon, version: 1, tier: 2, start_year: 2000, 
+  end_year: 2020}
 
 
 diagnostics:
 
-  sea_ice_sh:
-    description: sea ice area and mapping sea ice concentration
-    variables:
-    ## 2 variables - sea ice concentration and cell area to compute sea ice area
-      aus_sst:
-        short_name: siconc
-        mip: SImon
-      area:
-        short_name: areacello
-        mip: Ofx
-    scripts:
-      map_extents:
-        months: [2,9] # months to map (feb, sep)
-        script: /home/189/fc6164/esmValTool/CMIP7-Hackathon/recipes/sea-ice/seaice_maps.py  # update location of scripts
-      trends:
-        script: /home/189/fc6164/esmValTool/CMIP7-Hackathon/recipes/sea-ice/seaicearea_trends.py
+  plot_enso_analysis:
+    description: Plot range of ENSO analyses.
+
+### Need to add in variables here?
+
+  scripts:
+    plotting:
+      script: /scratch/nf33/mgt562/CMIP7-Hackathon/recipes/general/plot_enso_analysis.py
