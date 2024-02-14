@@ -1,0 +1,47 @@
+# ESMValTool
+# recipe_my_diagnostic.yml
+---
+documentation:
+  description: |
+    This is an example recipe for a personal diagnostic 
+    to be edited.
+
+  authors:
+    - predoi_valeriu
+
+  title: |
+    Example recipe for running a user-written diagnostic.
+
+
+datasets:
+  - {dataset: ACCESS-ESM1-5, activity: CMIP, project: CMIP6, grid: gn, exp: historical, ensemble: r1i1p1f1}
+  # - {dataset: UKESM1-0-LL, activity: CMIP, project: CMIP6, grid: gn, exp: historical, ensemble: r1i1p1f2}
+  # - {dataset: CESM2, activity: CMIP, project: CMIP6, grid: gn, exp: historical, ensemble: r1i1p1f1}
+
+# define any preprocessors for the datasets
+# reference doc on these preprocessors:
+# https://docs.esmvaltool.org/projects/ESMValCore/en/latest/recipe/preprocessor.html
+preprocessors:
+  pp:
+    extract_region:
+      start_longitude: 110
+      end_longitude: 160
+      start_latitude: -45
+      end_latitude: -9
+    area_statistics:
+      operator: mean
+
+diagnostics:
+  simple:
+    description: "Simple personal diagnostic"
+    variables:
+      ta:
+        preprocessor: pp  # defined preprocessor above
+        mip: Amon
+        start_year: 2000
+        end_year: 2002
+    
+    scripts:
+      my_diagnostic:
+        # Replace this path with the absolute path to your diagnostic (eg. /path/to/your/my_diagnostic.py)
+        script: /home/189/fc6164/esmValTool/CMIP7-Hackathon/recipes/skeleton_recipe/my_diagnostic.py
