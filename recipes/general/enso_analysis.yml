@@ -8,25 +8,24 @@ documentation:
   authors:
     - sullivan_arnold
     - tetley_michael
-
+    - beucher_romain
 
 datasets: 
   - {dataset: ACCESS-CM2, activity: CMIP, project: CMIP6, mip: Amon, grid: gn, exp: piControl, 
-  ensemble: r4i1p1f1, version: v20240121, start_year: 1061, end_year: 1079}
-  - {dataset: HadISST, type: reanaly, mip: Amon, project: obs4mips, version: 1, tier: 2, start_year: 2000, 
-  end_year: 2020}
-
+  ensemble: r1i1p1f1, start_year: 1061, end_year: 1079}
 
 diagnostics:
   plot_enso_analysis:
     description: Plot range of ENSO analyses.
     variables:
-      surface_temp_CM2:
+      ts:
         short_name: "ts"
+        start_year: 2000
+        end_year: 2020
+        reference_dataset: HadISST
         mip: Amon
-      surface_temp_OBS:
-        short_name: "OBS_HadISST"
-        mip: Amon
+      additional_datasets:
+              - {dataset: HadISST, project: OBS, type: reanaly, version: 1, tier: 2}
     scripts:
       plotting:
         script: /scratch/nf33/mgt562/CMIP7-Hackathon/recipes/general/plot_enso_analysis.py
