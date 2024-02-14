@@ -18,12 +18,8 @@ datasets:
 
 
 diagnostics:
-
   plot_enso_analysis:
     description: Plot range of ENSO analyses.
-
-### Need to add in variables here?
-
-    scripts:
-      plotting:
-        script: /scratch/nf33/mgt562/CMIP7-Hackathon/recipes/general/plot_enso_analysis.py
+    scripts: null
+      # plotting:
+      #   script: /scratch/nf33/mgt562/CMIP7-Hackathon/recipes/general/plot_enso_analysis.py
