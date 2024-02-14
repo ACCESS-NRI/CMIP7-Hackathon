@@ -13,7 +13,7 @@ documentation:
 datasets: 
   - {dataset: ACCESS-CM2, activity: CMIP, project: CMIP6, mip: Amon, grid: gn, exp: piControl, 
   ensemble: r4i1p1f1, version: v20240121, start_year: 1061, end_year: 1079}
-  - {dataset: OBS_HadISST, type: reanaly, mip: Amon, project: obs4mips, version: 1, tier: 2, start_year: 2000, 
+  - {dataset: HadISST, type: reanaly, mip: Amon, project: obs4mips, version: 1, tier: 2, start_year: 2000, 
   end_year: 2020}
 
 
@@ -21,8 +21,11 @@ diagnostics:
   plot_enso_analysis:
     description: Plot range of ENSO analyses.
     variables:
-      surface_temp:
+      surface_temp_CM2:
         short_name: "ts"
+        mip: Amon
+      surface_temp_OBS:
+        short_name: "OBS_HadISST"
         mip: Amon
     scripts:
       plotting:
