@@ -1,11 +1,12 @@
 # ESMValTool 
-# run on normalbw with 5 ncpus run time <1 min, 1cpu <2mins
+
 ---
 documentation:
   title: sea ice area recipe
   description: |
-    This is an example recipe, 
-    converting a COSIMA cookbook recipe with help from Anton Steketee
+    This is an example recipe, for use in 
+    CMIP7 hackathon 2024, CSIRO Aspendale.
+    Converted a COSIMA cookbook recipe with help from Anton Steketee
 
   authors:
     - chun_felicity
@@ -13,11 +14,14 @@ documentation:
   realms:
     - seaIce
 
+  projects:
+    - access-nri
+
 datasets: 
 # these years are comparable to 1958 -2018 # re-adjust years in script (+1652)
   - {dataset: ACCESS-ESM1-5, activity: CMIP ,project: CMIP6,  grid: gn,
   exp: piControl, ensemble: r1i1p1f1, start_year: 306, end_year: 366} 
-  - {dataset: ACCESS-OM2, activity: OMIP ,project: CMIP6,  grid: gn,  # -ACCESS-OM2-025
+  - {dataset: ACCESS-OM2, activity: OMIP ,project: CMIP6,  grid: gn,
   exp: omip2, ensemble: r1i1p1f1, start_year: 306, end_year: 366} 
 # observations
   - {dataset: NSIDC-G02202-sh, project: OBS6, tier: 3,
