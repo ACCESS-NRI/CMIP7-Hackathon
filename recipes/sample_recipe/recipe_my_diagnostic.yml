@@ -6,8 +6,9 @@ documentation:
     This is an example recipe for a personal diagnostic 
     to be edited.
 
-  authors:
-    - predoi_valeriu
+  authors: 
+  # author must be in config-references for recipe to run
+    - chun_felicity
 
   title: |
     Example recipe for running a user-written diagnostic.
