@@ -10,6 +10,7 @@ import pandas as pd
 
 # EOF 
 #import sacpy as scp
+
 import cartopy.crs as ccrs
 import matplotlib.pyplot as plt
 import numpy as np
@@ -37,8 +38,10 @@ def plot_eof2(ssta,ttl,fName,xlon,xlat):
     plot_eof(ssta)
     pcs_amo = plot_eof2(AMO,ttl,fName,310,40)
     '''
-    eof = scp.EOF(np.array(ssta))
-    eof.solve()
+
+    #eof = scp.EOF(np.array(ssta))
+    # eof.solve()
+
     pc = eof.get_pc(npt=2)
     pt = eof.get_pt(npt=2)
 
@@ -180,7 +183,6 @@ def main(cfg):
     for dataset in input_data:
         
         input_file = [dataset['filename'], dataset['dataset']]
-        # drop areacello dataset for map
         # if dataset['short_name'] == 'siconc':
         data.append(input_file)
 
