@@ -24,8 +24,8 @@ diagnostics:
         end_year: 2020
         reference_dataset: HadISST
         mip: Amon
-      additional_datasets:
-              - {dataset: HadISST, project: OBS, type: reanaly, version: 1, tier: 2}
+    additional_datasets:
+      - {dataset: HadISST, project: OBS, type: reanaly, version: 1, tier: 2}
     scripts:
       plotting:
         script: /scratch/nf33/mgt562/CMIP7-Hackathon/recipes/general/plot_enso_analysis.py
