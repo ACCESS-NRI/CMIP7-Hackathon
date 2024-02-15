@@ -28,14 +28,14 @@ preprocessors:
       end_longitude: 160
       start_latitude: -45
       end_latitude: -9
-    area_statistics:
-      operator: mean
+    # climate_statistics:
+    #   operator: mean
 
 diagnostics:
   simple:
     description: "Simple personal diagnostic"
     variables:
-      ta:
+      ta: # short name variable for diagnostic
         preprocessor: pp  # defined preprocessor above
         mip: Amon
         start_year: 2000
@@ -44,4 +44,4 @@ diagnostics:
     scripts:
       my_diagnostic:
         # Replace this path with the absolute path to your diagnostic (eg. /path/to/your/my_diagnostic.py)
-        script: /home/189/fc6164/esmValTool/CMIP7-Hackathon/recipes/skeleton_recipe/my_diagnostic.py
+        script: /home/189/fc6164/esmValTool/CMIP7-Hackathon/recipes/sample_recipe/my_diagnostic.py

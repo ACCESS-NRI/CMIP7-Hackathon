@@ -37,20 +37,24 @@ def compute_diagnostic(filename):
     logger.debug("Running example computation")
 
     # example ...
-    cube = iris.util.squeeze(cube)
+    # cube = iris.util.squeeze(cube)
     return cube
 
 
 def plot_diagnostic(cube, dataset, cfg):
+    # !! alter parameters with what you want, 
+    # eg. using xarray dataset
     """Plot diagnostic data."""
 
     plot_path = cfg['plot_dir']
-
-    # plotting, cube to fit plotting
     # !! set up as you need !!
+
+    # plotting example, cube to fit plotting in arbitrary way
+    cube = cube.collapsed(cube.coords()[1:], iris.analysis.MEAN)
+    logger.info(cube)
     plt.plot(cube.data, label=dataset)
-    plt.xlabel('x')
-    plt.ylabel('y')
+    plt.xlabel(cube.coords()[0].name())
+    plt.ylabel(cube.name())
 
     png_name = dataset + '.png'
     plt.savefig(os.path.join(plot_path, png_name))
