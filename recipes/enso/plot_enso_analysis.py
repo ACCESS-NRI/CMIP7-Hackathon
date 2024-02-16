@@ -4,18 +4,18 @@ ESMValTool port of ENSO analysis plotting script by Arnold Sullivan (CSIRO)
 
 import xarray as xr
 import numpy as np
-from matplotlib import pyplot as plt
-import os
+import matplotlib.pyplot as plt
 import pandas as pd
+import os
 
-# EOF 
 #import sacpy as scp
 
 import cartopy.crs as ccrs
-import matplotlib.pyplot as plt
-import numpy as np
+#import matplotlib.pyplot as plt
+#import numpy as np
 #import sacpy.Map as smap
 from scipy.linalg import svd
+from scipy.signal import welch
 
 # ESMValTool requirements
 import logging
@@ -166,30 +166,12 @@ shayne_cmap = LinearSegmentedColormap.from_list("shayne_cmap", colors)
 ## ------------------------------
 
 
-
-
-
-
-## ------------------------------
-
-
 def main(cfg):
 
     """Generate plots"""
     input_data = cfg['input_data'].values()
     data = []
     ifiles = []
-
-    # Find input datasets to use
-    for dataset in input_data:
-
-        ifiles.append(dataset['filename'])
-        
-        input_file = [dataset['filename'], dataset['dataset']]
-        data.append(input_file)
-
-    df = pd.DataFrame(data, columns=['filename','dataset'])
-    logger.info(df)
     
     # Join all data for processing
     ds_n34_tfile = [xr.open_dataset(file) for file in ifiles]
@@ -197,6 +179,10 @@ def main(cfg):
     # Calculate n3 anom for each dataset
     ts_cnl_anm, ts_cnl_clm = calculate_n3_anom(ds_n34_tfile[0].ts.sel(lat=slice(-20,20),lon=slice(120,280)),1061,1080) # make sure the variable name in HadISST is ts, sometimes it is sst.
     ts_obs_anm, ts_obs_clm = calculate_n3_anom(ds_n34_tfile[1].ts.sel(lat=slice(-20,20),lon=slice(120,280)),1980,2000) # make sure the variable name in HadISST is ts, sometimes it is sst.
+
+
+    ## ------------------------------
+    #  Correlation and regression plots
 
     # -- Calculate nino3.4 index
     nino = ts_obs_anm.sel(lon=slice(190,240),lat=slice(-5,5)).mean(["lat","lon"])
@@ -245,7 +231,7 @@ def main(cfg):
     lon = ts_obs_anm.lon
 
     fig, axs = plt.subplots(num_rows, num_cols, figsize=(12, 12))  # Adjust the figsize as needed
-    fig.suptitle('Sample plot for xperiment 1. ENSO lead-lag patterns')
+    fig.suptitle('Sample correlation plot for experiment 1. ENSO lead-lag patterns')
 
     for i in range(num_rows):
         for j in range(num_cols):
@@ -258,8 +244,75 @@ def main(cfg):
                 ax.set_title(f'Dataset {index + 1}')
 
     plt.tight_layout()
-    plt.savefig('enso_sample1_.png', dpi=300)
-    
+    plt.savefig('enso_correlation_analysis.png', dpi=150)
+
+
+    ## ------------------------------
+    #  Spectral analysis
+
+    # Length of time series in seconds
+    T = 1
+
+    # Sample frequency
+    Fs = 12
+
+    # Sample length
+    dt = 1 / Fs
+
+    # Number of time samples
+    N = len(nino); # int(T / dt)
+
+    # Time vector
+    t = np.arange(N) * dt
+
+    # Frequency vector
+    f = np.arange(N // 2 + 1) * Fs / N
+
+    # Frequency content of the signal (three frequencies in Hz)
+    F1 = 200
+    F2 = 400
+    F3 = 350
+    sigma = 3  # Standard deviation of the noise to be added
+
+    # Create time series
+    r = nino
+
+    # Compute one-sided FFT
+    R = np.fft.fft(r)
+    R2 = np.abs(R / N)
+    R1 = R2[: N // 2 + 1] * 2
+
+    # Compute power spectral density (autospectrum)
+    fxx, pxx = welch(r, fs=Fs, window="bartlett", nperseg=256, noverlap=128, nfft=2048)
+
+    # Plot results
+    plt.figure(figsize=(8, 10))
+
+    plt.subplot(3, 1, 1)
+    plt.plot(t, r, "-")
+    plt.title("Time series")
+    plt.xlabel("Time (Mon)")
+    plt.ylabel("Amplitude")
+
+    plt.subplot(3, 1, 2)
+    plt.plot(f, R1, "-")
+    plt.title("Fourier transform")
+    plt.xlabel("Frequency M-1")
+    plt.ylabel("Amplitude")
+    plt.axis([0, Fs / 2, 0, 1.1])
+
+    plt.subplot(3, 1, 3)
+    plt.plot(fxx, 2 * np.pi * pxx)
+    plt.title("Power Spectral Density")
+    plt.xlabel("Frequency M-1")
+    plt.ylabel("Power / M-1")
+
+    plt.tight_layout()
+    plt.savefig('enso_spectrum_analysis.png', dpi=150)
+
+
+
+    ## ------------------------------
 
 
 if __name__ == '__main__':
