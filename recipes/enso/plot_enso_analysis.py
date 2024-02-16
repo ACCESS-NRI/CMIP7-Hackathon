@@ -178,18 +178,88 @@ def main(cfg):
     """Generate plots"""
     input_data = cfg['input_data'].values()
     data = []
+    ifiles = []
 
     # Find input datasets to use
     for dataset in input_data:
+
+        ifiles.append(dataset['filename'])
         
         input_file = [dataset['filename'], dataset['dataset']]
-        # if dataset['short_name'] == 'siconc':
         data.append(input_file)
 
     df = pd.DataFrame(data, columns=['filename','dataset'])
-
     logger.info(df)
+    
+    # Join all data for processing
+    ds_n34_tfile = [xr.open_dataset(file) for file in ifiles]
 
+    # Calculate n3 anom for each dataset
+    ts_cnl_anm, ts_cnl_clm = calculate_n3_anom(ds_n34_tfile[0].ts.sel(lat=slice(-20,20),lon=slice(120,280)),1061,1080) # make sure the variable name in HadISST is ts, sometimes it is sst.
+    ts_obs_anm, ts_obs_clm = calculate_n3_anom(ds_n34_tfile[1].ts.sel(lat=slice(-20,20),lon=slice(120,280)),1980,2000) # make sure the variable name in HadISST is ts, sometimes it is sst.
+
+    # -- Calculate nino3.4 index
+    nino = ts_obs_anm.sel(lon=slice(190,240),lat=slice(-5,5)).mean(["lat","lon"])
+    ninoSD=nino/nino.std(dim='time')
+    rninoSD=ninoSD.rolling(time=7, center=True).mean('time')
+
+    # -- Running mean
+    ranm = ts_obs_anm.rolling(time=7, center=True).mean('time')
+    rdanm = detrend_dim(ranm,'time',1)
+
+
+    # -- Correlation & Regression
+    # Leading
+    corM36 = xr.corr(rninoSD, rdanm.shift(time=-36), dim="time")
+    regM36 = xr.cov( rninoSD, rdanm.shift(time=-36), dim="time")/rninoSD.var(dim='time',skipna=True).values
+    corM24 = xr.corr(rninoSD, rdanm.shift(time=-24), dim="time")
+    regM24 = xr.cov( rninoSD, rdanm.shift(time=-24), dim="time")/rninoSD.var(dim='time',skipna=True).values
+    corM12 = xr.corr(rninoSD, rdanm.shift(time=-12), dim="time")
+    regM12 = xr.cov( rninoSD, rdanm.shift(time=-12), dim="time")/rninoSD.var(dim='time',skipna=True).values
+    corM6 = xr.corr(rninoSD, rdanm.shift(time=-6), dim="time")
+    regM6 = xr.cov( rninoSD, rdanm.shift(time=-6), dim="time")/rninoSD.var(dim='time',skipna=True).values
+
+    # simultaneous
+    cor0 = xr.corr(rninoSD, rdanm, dim="time")
+    reg0 = xr.cov(rninoSD, rdanm, dim="time")/rninoSD.var(dim='time',skipna=True).values
+
+    # Laging
+    corP6 = xr.corr(rninoSD, rdanm.shift(time=6), dim="time")
+    regP6 = xr.cov( rninoSD, rdanm.shift(time=6), dim="time")/rninoSD.var(dim='time',skipna=True).values
+    corP12 = xr.corr(rninoSD, rdanm.shift(time=12), dim="time")
+    regP12 = xr.cov( rninoSD, rdanm.shift(time=12), dim="time")/rninoSD.var(dim='time',skipna=True).values
+    corP18 = xr.corr(rninoSD, rdanm.shift(time=18), dim="time")
+    regP18 = xr.cov( rninoSD, rdanm.shift(time=18), dim="time")/rninoSD.var(dim='time',skipna=True).values
+    corP24 = xr.corr(rninoSD, rdanm.shift(time=24), dim="time")
+    regP24 = xr.cov( rninoSD, rdanm.shift(time=24), dim="time")/rninoSD.var(dim='time',skipna=True).values
+    corP36 = xr.corr(rninoSD, rdanm.shift(time=36), dim="time")
+    regP36 = xr.cov( rninoSD, rdanm.shift(time=36), dim="time")/rninoSD.var(dim='time',skipna=True).values
+
+
+    cor_reg_lst = [corM36,corM24,corM12,corM6,cor0,corP6,corP12,corP18,corP24,corP36 ]
+
+    # Reshaping the datasets for 5x2 subplot arrangement
+    num_rows, num_cols = 5, 2
+
+    lat = ts_obs_anm.lat
+    lon = ts_obs_anm.lon
+
+    fig, axs = plt.subplots(num_rows, num_cols, figsize=(12, 12))  # Adjust the figsize as needed
+    fig.suptitle('Sample plot for xperiment 1. ENSO lead-lag patterns')
+
+    for i in range(num_rows):
+        for j in range(num_cols):
+            index = i * num_cols + j
+            if index < len(cor_reg_lst):
+                ax = axs[i, j]
+                ax.pcolormesh(lon,lat,cor_reg_lst[index])  # Plot contour for cor_lst
+                ax.set_xlabel('Longitude')
+                ax.set_ylabel('Latitude')
+                ax.set_title(f'Dataset {index + 1}')
+
+    plt.tight_layout()
+    plt.savefig('enso_sample1_.png', dpi=300)
+    
 
 
 if __name__ == '__main__':
