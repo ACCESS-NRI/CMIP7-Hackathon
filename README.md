@@ -4,6 +4,8 @@ Welcome to the ACCESS-NRI CMIP7 Hackathon repo
 
 ## Getting Started
 
+To get those most out of this hackathon we recommend using Microsoft Visual Studio Code which can be downloaded for Windows, MacOS and Linux [here](https://code.visualstudio.com/). Additionally, you can find our "Getting started with Visual Studio Code" video tutorial here.
+
 The first thing to do is to clone this repo to a location on Gadi that you have permission to use via the following 3 steps: 
 
 Step 1. Log into Gadi using ssh via the command line using your registed NCI *username* and enter your password when prompted. Once you see the welcome note you have successfully logged in. 
