@@ -1,6 +1,6 @@
-# CMIP7-Hackathon
+# ACCESS-NRI CMIP7-Hackathon
 
-Welcome to the ACCESS-NRI CMIP7 Hackathon repo
+Welcome to the ACCESS-NRI CMIP7 Hackathon repo.
 
 ## Getting Started
 
