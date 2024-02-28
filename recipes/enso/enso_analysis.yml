@@ -1,0 +1,31 @@
+# ESMValTool 
+# run on normalbw with 5 ncpus run time <1 min, 1cpu <2mins
+---
+documentation:
+  title: ENSO analysis
+  description: El Nino Southern Oscillation analysis. 
+
+  authors:
+    - sullivan_arnold
+    - tetley_michael
+    - beucher_romain
+
+datasets: 
+  - {dataset: ACCESS-CM2, activity: CMIP, project: CMIP6, mip: Amon, grid: gn, exp: piControl, 
+  ensemble: r1i1p1f1, start_year: 1061, end_year: 1079}
+
+diagnostics:
+  plot_enso_analysis:
+    description: Plot range of ENSO analyses.
+    variables:
+      ts:
+        short_name: "ts"
+        # start_year: 1980
+        # end_year: 2000
+        reference_dataset: HadISST
+        mip: Amon
+    additional_datasets:
+      - {dataset: HadISST, project: OBS, type: reanaly, version: 1, tier: 2}
+    scripts:
+      plotting:
+        script: /scratch/nf33/mgt562/CMIP7-Hackathon/recipes/enso/plot_enso_analysis.py
