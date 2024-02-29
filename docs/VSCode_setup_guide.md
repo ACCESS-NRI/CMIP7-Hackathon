@@ -16,7 +16,7 @@
 `nf33`, `xp65`, `fs38`, `oi10`, `al33`, `rr3`, `rt52`, `zz93` and `ct11` **prior** to attending the Hackathon. Please note it can take 1-2 days to receive membership approvals.
 - *0.3* Download and install Microsoft Visual Studio on your local system. VS Code can be downloaded from [this page](https://code.visualstudio.com/).
 
-[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#getting-started-guide-to-visual-studio-code)
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#getting-started-guide-for-visual-studio-code)
 
 ## 1. Installing VS Code extensions
 Out of the box, VS Code doesn't do everything we need it to - so we must install some software extensions to get the most out of the Hackathon.
@@ -47,7 +47,7 @@ Type `live server` into the extensions search bar and select the *Live Server* e
 
 <p align="center"><img src="assets/extensions_liveserver.png" alt="drawing" width="90%"/></p>
 
-[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#getting-started-guide-to-visual-studio-code)
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#getting-started-guide-for-visual-studio-code)
 
 ## 2. Open remote connection to Gadi
 
@@ -73,7 +73,7 @@ To connect to Gadi, follow these steps to establish and open a remote connection
 
 <p align="center"><img src="assets/open_remote5.png" alt="drawing" width="90%"/></p>
 
-[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#getting-started-guide-to-visual-studio-code)
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#getting-started-guide-for-visual-studio-code)
 
 ## 3. Load ESMValTool modules and set up Hackathon environment
 
@@ -123,7 +123,7 @@ and run the following:
 ```
 run_recipe recipes/ocean/maps/map1.yml
 ```
-[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#getting-started-guide-to-visual-studio-code)
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#getting-started-guide-for-visual-studio-code)
 
 ## 4. Create a workspace / open folders on Gadi
 
@@ -147,7 +147,7 @@ You can add multiple unique folders to the current workspace by right clicking a
 
 Now that you have a workspace setup, why not add the above mentioned `esmvaltool_outputs` and `logs` folders (replacing [username] with your NCI account username) for quick access.
 
-[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#getting-started-guide-to-visual-studio-code)
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#getting-started-guide-for-visual-studio-code)
 
 ## 5. VS Code extras
 
@@ -162,4 +162,4 @@ If you have multiple folders open in your workspace, you will first be prompted 
 
 <p align="center"><img src="assets/terminals.png" alt="drawing" width="90%"/></p>
 
-[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#getting-started-guide-to-visual-studio-code)
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#getting-started-guide-for-visual-studio-code)
