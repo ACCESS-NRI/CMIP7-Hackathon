@@ -1,12 +1,15 @@
 # Getting started guide to Visual Studio Code
 <p>This is a quick-start guide to setting up and using Microsoft Visual Studio Code to interact with Gadi and run ESMValTool recipes for the ACCESS-NRI CMIP7-Hackathon.</p>
 
-## Contents
-- Section 1
-- Section 2
-- Section 3
+## Quick-links to sections
+- [0. Pre-Workshop preparation](https://github.com/ACCESS-NRI/CMIP7-Hackathon/edit/VSCode_docs/docs/VSCode_setup_guide.md#0-pre-workshop)
+- [1. Installing VS Code extensions](https://github.com/ACCESS-NRI/CMIP7-Hackathon/edit/VSCode_docs/docs/VSCode_setup_guide.md#1-installing-vs-code-extensions)
+- [2. Open remote connection to Gadi](https://github.com/ACCESS-NRI/CMIP7-Hackathon/edit/VSCode_docs/docs/VSCode_setup_guide.md#2-open-remote-connection-to-gadi)
+- [3. Load ESMValTool modules and set up Hackathon environment](https://github.com/ACCESS-NRI/CMIP7-Hackathon/edit/VSCode_docs/docs/VSCode_setup_guide.md#3-load-esmvaltool-modules-and-set-up-hackathon-environment)
+- [4. Create a workspace / open folders on Gadi](https://github.com/ACCESS-NRI/CMIP7-Hackathon/edit/VSCode_docs/docs/VSCode_setup_guide.md#4-create-a-workspace--open-folders-on-gadi)
+- [5. VS Code extras](https://github.com/ACCESS-NRI/CMIP7-Hackathon/edit/VSCode_docs/docs/VSCode_setup_guide.md#5-vs-code-extras)
 
-## 0. Pre-workshop
+## 0. Pre-workshop preparation
 
 - *0.1* In order to get the most out of the Hackathon, you will require a NCI account. If you do not yet have a NCI account, you can sign up on the [MyNCI website](https://my.nci.org.au).
 - *0.2* To run the exercises, access to specific projects on Gadi is required. To help things run as smoothly as possible on the day, please log in to the [MyNCI website](https://my.nci.org.au) and join the following projects:
