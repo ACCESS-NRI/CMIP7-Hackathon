@@ -14,17 +14,19 @@ The first thing to do is setup our system to run the ESMValTool recipes prepared
 ```
 $ ssh [username]@gadi.nci.org.au
 ```
-**Step 2.** Enter each the following two commands (one after the other) to both load the required [ACCESS-NRI ESMValTool-workflow](https://github.com/ACCESS-NRI/ESMValTool-workflow) module and hacakthon setup scripts.
+**Step 2.** Enter the following two commands (one after the other). The first command loads some necessary dependencies needed to run ESMValTool, and the second command loads the required [ACCESS-NRI ESMValTool-workflow](https://github.com/ACCESS-NRI/ESMValTool-workflow) module.
 ```
 module use /g/data/xp65/public/modules
 ```
 ```
 module load esmvaltool
 ```
-**Step 3.** Run the hackathon setup script. This checks your NCI account has access to the required projects on Gadi and their respective storage locations are mounted, clones the [CMIP7-Hackathon Github repository](https://github.com/ACCESS-NRI/CMIP7-Hackathon) and automatically runs each of the hackathon ESMValTool recipes as a PBS job on Gadi.
+**Step 3.** Run the hackathon setup script. This verifies that your NCI account has access to the required projects on Gadi and that their respective storage locations are mounted, clones the [CMIP7-Hackathon Github repository](https://github.com/ACCESS-NRI/CMIP7-Hackathon), and automatically runs each of the hackathon ESMValTool recipes as a PBS job on Gadi.
 ```
 check_hackathon
 ```
+Note that this may take up to a minute to finish running.
+
 ## ESMValTool recipes
 
 Once you have run `check_hackathon` and have recieved the "YOU ARE ALL SET!!!" message in your chosen terminal, you can now do the following:
@@ -49,7 +51,11 @@ We also include a convenience wrapper function to manually run individual recipe
 ```
 run_recipe [path-to-recipe]
 ```
-For example, to manually run the hackathon `map1` recipe found in `/recipes/ocean/maps`:
+For example, to manually run the hackathon `map1` recipe found in `/scratch/nf33/[username]/CMIP7-Hackathon/recipes/ocean/maps`, you can `cd` into the cloned CMIP7-Hackathon Github repository
+```
+cd /scratch/nf33/[username]/CMIP7-Hackathon
+```
+and run the following:
 ```
 run_recipe recipes/ocean/maps/map1.yml
 ```
