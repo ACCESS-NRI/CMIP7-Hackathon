@@ -53,7 +53,7 @@ Type `live server` into the extensions search bar and select the *Live Server* e
 
 To connect to Gadi, follow these steps to establish and open a remote connection using the *Remote-SSH* extension.
 
-- *2.1* To get started, click the blue "Open a Remote Window" window in the bottom left-hand corner.
+- *2.1* To get started, click the blue `Open a Remote Window` button in the bottom left-hand corner.
 
 <p align="center"><img src="assets/open_remote1.png" alt="drawing" width="90%"/></p>
 
