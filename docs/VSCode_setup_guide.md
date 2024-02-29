@@ -2,7 +2,7 @@
 <p>This is a quick-start guide to setting up and using Microsoft Visual Studio Code to interact with Gadi and run ESMValTool recipes for the ACCESS-NRI CMIP7-Hackathon.</p>
 
 ## Quick-links to sections
-- [0. Pre-Workshop preparation](https://github.com/ACCESS-NRI/CMIP7-Hackathon/VSCode_docs/docs/VSCode_setup_guide.md#0-pre-workshop)
+- [0. Pre-Workshop preparation](./docs/VSCode_setup_guide.md#0-pre-workshop)
 - [1. Installing VS Code extensions](https://github.com/ACCESS-NRI/CMIP7-Hackathon/VSCode_docs/docs/VSCode_setup_guide.md#1-installing-vs-code-extensions)
 - [2. Open remote connection to Gadi](https://github.com/ACCESS-NRI/CMIP7-Hackathon/VSCode_docs/docs/VSCode_setup_guide.md#2-open-remote-connection-to-gadi)
 - [3. Load ESMValTool modules and set up Hackathon environment](https://github.com/ACCESS-NRI/CMIP7-Hackathon/VSCode_docs/docs/VSCode_setup_guide.md#3-load-esmvaltool-modules-and-set-up-hackathon-environment)
