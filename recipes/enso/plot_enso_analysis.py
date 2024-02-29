@@ -171,10 +171,16 @@ def main(cfg):
     """Generate plots"""
     input_data = cfg['input_data'].values()
     data = []
-    ifiles = []
+
+    # Find input datasets to use
+    for dataset in input_data:
+        
+        input_file = [dataset['filename'], dataset['dataset']]
+        logging.info('Grid file: ' + input_file[0])
+        data.append(input_file)
     
     # Join all data for processing
-    ds_n34_tfile = [xr.open_dataset(file) for file in ifiles]
+    ds_n34_tfile = [xr.open_dataset(dataset[0]) for dataset in data]
 
     # Calculate n3 anom for each dataset
     ts_cnl_anm, ts_cnl_clm = calculate_n3_anom(ds_n34_tfile[0].ts.sel(lat=slice(-20,20),lon=slice(120,280)),1061,1080) # make sure the variable name in HadISST is ts, sometimes it is sst.

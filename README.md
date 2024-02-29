@@ -4,62 +4,58 @@ Welcome to the ACCESS-NRI CMIP7 Hackathon repo.
 
 ## Visual Studio Code
 
-To get the most out of the hackathon exercises, we recommend using Microsoft Visual Studio Code which can be downloaded free for Windows, MacOS and Linux [here](https://code.visualstudio.com/). Additionally, for new users or those simply wanting a quick refresher, you can watch our getting started workflow for Gadi video tutorial here.
+To get the most out of the hackathon exercises, we recommend using Microsoft Visual Studio Code which can be downloaded free for Windows, MacOS and Linux [here](https://code.visualstudio.com/). Additionally, for new users or those simply wanting a quick refresher, you can watch our getting started workflow for Gadi video tutorial [here](https://youtu.be/fSxirzDR3iw).
 
 ## Getting Started
 
-The first thing to do is to clone this repo to a location on Gadi that you have permission to use via the following 3 steps: 
+The first thing to do is setup our system to run the ESMValTool recipes prepared for the Hackathon. 
 
-Step 1. Log into Gadi using ssh via the command line using your registed NCI *username* and enter your password when prompted. Once you see the welcome note you have successfully logged in. 
+**Step 1.** Log into Gadi using ssh via the command line using your registed NCI *username* and enter your password when prompted. Once you see the welcome note you have successfully logged in. 
 ```
 $ ssh [username]@gadi.nci.org.au
-``` 
-Step 2. Navigate to the location you wish to use for this hackathon using the *cd* command follwed by the location path.
 ```
-cd [location path]
+**Step 2.** Enter the following two commands (one after the other). The first command loads some necessary dependencies needed to run ESMValTool, and the second command loads the required [ACCESS-NRI ESMValTool-workflow](https://github.com/ACCESS-NRI/ESMValTool-workflow) module.
 ```
-Step 3. Clone the ACCESS-NRI CMIP7 Hackathon repo to this location be entering the following on the command line:
+module use /g/data/xp65/public/modules
 ```
-git clone https://github.com/ACCESS-NRI/CMIP7-Hackathon
 ```
-When successfully cloned, you will see the directory *CMIP7-Hackathon*. To open this directory, enter the following:
+module load esmvaltool
 ```
-cd CMIP7-Hackathon
+**Step 3.** Run the hackathon setup script. This verifies that your NCI account has access to the required projects on Gadi and that their respective storage locations are mounted, clones the [CMIP7-Hackathon Github repository](https://github.com/ACCESS-NRI/CMIP7-Hackathon), and automatically runs each of the hackathon ESMValTool recipes as a PBS job on Gadi.
 ```
-Once inside the CMIP7-Hackathon directory, to make sure your Gadi environment and NCI project permissions are all set up correctly, before starting any of the tutorials, please first run the following *Python* script:
+check_hackathon
+```
+Note that this may take up to a minute to finish running.
 
-```
-python3 check_hackathon.py
-```
-Please make sure you see a result of "OK" next to each line before proceeding.
+## ESMValTool recipes
 
+Once you have run `check_hackathon` and have recieved the "YOU ARE ALL SET!!!" message in your chosen terminal, you can now do the following:
 
-## Running an ESMValTool recipe on Gadi
-
-Individual *ESMValTool* recipes can be automatically set up and run on Gadi using the following 1-line command. Simply replace [recipe path] with the relative path to a recipe found in the [recipes folder](https://github.com/ACCESS-NRI/CMIP7-Hackathon/tree/main/recipes).
-
-```
-source admin/bash_utilities.sh; run_recipe [recipe path]
-```
-
-An example might be:
-
-```
-source admin/bash_utilities.sh; run_recipe recipes/ocean/maps/map1.yml
-```
-
-If working correctly, you should see:
-```
-Running recipe: recipes/ocean/maps/map1.yml
-107769xxx.gadi-pbs
-```
-This tells us that, in this case, the *ESMValTool* recipe *map1* has been successfully submitted to Gadi for processing and the job number is 107769xxx. 
-To check the status of this job, you can enter either of the following:
-```
-qstat 107769xxx
-```
--- to track the status of a specific job number, or
+* Check the status of each of your actively running recipes:
 ```
 qstat -u [username]
 ```
--- to track the status of all jobs submitted to the queue by you. Simply replace [username] with your NCI username.
+* View ESMValTool recipe outputs here:
+```
+/scratch/nf33/[username]/esmvaltool_outputs
+```
+* View ESMValTool recipe logs here:
+```
+/scratch/nf33/[username]/CMIP7-Hackathon/admin/logs
+```
+* Find the full cloned [CMIP7-Hackathon Github repository](https://github.com/ACCESS-NRI/CMIP7-Hackathon) here:
+```
+/scratch/nf33/[username]/CMIP7-Hackathon
+```
+We also include a convenience wrapper function to manually run individual recipes found in the CMIP7-Hackathon Github repository [recipes directory](https://github.com/ACCESS-NRI/CMIP7-Hackathon/tree/main/recipes):
+```
+run_recipe [path-to-recipe]
+```
+For example, to manually run the hackathon `map1` recipe found in `/scratch/nf33/[username]/CMIP7-Hackathon/recipes/ocean/maps`, you can `cd` into the cloned CMIP7-Hackathon Github repository
+```
+cd /scratch/nf33/[username]/CMIP7-Hackathon
+```
+and run the following:
+```
+run_recipe recipes/ocean/maps/map1.yml
+```
