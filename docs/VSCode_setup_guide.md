@@ -65,7 +65,7 @@ To connect to Gadi, follow these steps to establish and open a remote connection
 
 <p align="center"><img src="assets/open_remote3.png" alt="drawing" width="90%"/></p>
 
-- *2.4* Enter the remote host (Gadi) details which are comprised of your NCI `username` followed by `@gadi.nci.org.au`
+- *2.4* Enter the remote host (Gadi) details which are comprised of your NCI `username` followed by `@gadi.nci.org.au`. You may be prompted to select a _ssh_ `config` file so VS Code can remember your _ssh_ connections in future. Usually the first option works fine as VS Code will manage the file.
 
 <p align="center"><img src="assets/open_remote4.png" alt="drawing" width="90%"/></p>
 
