@@ -1,5 +1,5 @@
-# Getting started guide to Visual Studio Code
-<p>This is a quick-start guide to setting up and using Microsoft Visual Studio Code to interact with Gadi and run ESMValTool recipes for the ACCESS-NRI CMIP7-Hackathon.</p>
+# Getting started guide for Visual Studio Code
+<p>This is an introductory guide to setting up and using Microsoft Visual Studio Code to interact with Gadi and run ESMValTool recipes for the ACCESS-NRI CMIP7-Hackathon.</p>
 
 ## Quick-links to sections
 - [0. Pre-Workshop preparation](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#0-pre-workshop-preparation)
