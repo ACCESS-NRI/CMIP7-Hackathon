@@ -25,7 +25,7 @@ Out of the box, VS Code doesn't do everything we need it to - so we must install
 
 <p align="center"><img src="assets/extensions.png" alt="drawing" width="90%"/></p>
 
-We have a total of 4 extensions to install. Note hovering over a listed extension you get a small information pane (as seen below), and clicking on an extension opens a full extension information page.
+We have a total of 4 extensions to install. Note that when hovering over a listed extension, a small information pane pops up (as seen below), and clicking on an extension opens a full extension information page.
 
 - *Extension 1:* **Python** <br>
 This extension provides full code support and highlighting for the *Python* programming language within VS Code. Type `python` into the extensions search bar and select the *Python* extension published by Microsoft marked with the red ellipse below. Click `install` to add the extension.
