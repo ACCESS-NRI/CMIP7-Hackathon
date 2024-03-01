@@ -4,34 +4,44 @@ Welcome to the ACCESS-NRI CMIP7 Hackathon repo.
 
 ## Visual Studio Code
 
-To get the most out of the hackathon exercises, we recommend using Microsoft Visual Studio Code which can be downloaded free for Windows, MacOS and Linux [here](https://code.visualstudio.com/). Additionally, for new VS Code users or those simply wanting a quick refresher, you can;
-- watch our getting started workflow for Gadi video tutorial [here](https://youtu.be/fSxirzDR3iw) (6 min),
-- follow our step-by-step getting started documentation [here](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md).
+To get the most out of the hackathon exercises, we recommend using Microsoft Visual Studio Code which can be downloaded free for Windows, MacOS and Linux [here](https://code.visualstudio.com/). For new VS Code users or those simply wanting a quick refresher, we have created a video and written guide to help you set up VS Code on Gadi. Note that the information is roughly the same, so you can choose either video or written guide to follow along.
+- [Video tutorial: Visual Studio Code Workflow for Gadi](https://youtu.be/fSxirzDR3iw) _(~6 min)_
+- [Written guide: Getting Started Guide for Visual Studio Code with Gadi](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md)
 
-## Getting Started
 
-The first thing to do is setup our system to run the ESMValTool recipes prepared for the Hackathon. 
+_**NOTE:** There are two pieces of information to clarify from the video tutorial that are explained in the written guide:_
+1. _When logging into Gadi for the first time in VS Code, you do not need to write your own config file. You can simply choose the default option that is suggested and VS Code will create one for you. You only need to do this once - the first time you log in._
+2. _In addition to the 3 extensions mentioned in the video, you will need to install a 4th extension to view html files (this is how most of the ESMValTool recipes show output plots). You can see our recommended extension "Live Server" in the [written guide above](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md)._
 
-**Step 1.** Log into Gadi using ssh via the command line using your registed NCI *username* and enter your password when prompted. Once you see the welcome note you have successfully logged in. 
+
+## Logging into Gadi
+
+The first thing to do is to login to Gadi. You can choose to run the following commands either from your computer's terminal or from the terminal within VS Code. If you follow the above steps to set up VS Code on Gadi, you can skip to the next section ["Set up our environment to run ESMValTool"](#set-up-our-environment-to-run-ESMValTool) below (since the [video](https://youtu.be/fSxirzDR3iw) and [written guide](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md) already walk you through how to connect to Gadi in VS Code). 
+
+Log into Gadi using ssh via the command line using your registed NCI *username* and enter your password when prompted. Once you see the welcome note you have successfully logged in. 
 ```
 $ ssh [username]@gadi.nci.org.au
 ```
-**Step 2.** Enter the following two commands (one after the other). The first command loads some necessary dependencies needed to run ESMValTool, and the second command loads the required [ACCESS-NRI ESMValTool-workflow](https://github.com/ACCESS-NRI/ESMValTool-workflow) module.
+## Set up our environment to run ESMValTool 
+
+Next we want to set up our system to run the ESMValTool recipes prepared for the Hackathon. 
+
+**Step 1.** Enter the following two commands (one after the other). The first command loads some necessary dependencies needed to run ESMValTool, and the second command loads the required [ACCESS-NRI ESMValTool-workflow](https://github.com/ACCESS-NRI/ESMValTool-workflow) module.
 ```
 module use /g/data/xp65/public/modules
 ```
 ```
 module load esmvaltool
 ```
-**Step 3.** Run the hackathon setup script. This verifies that your NCI account has access to the required projects on Gadi and that their respective storage locations are mounted, clones the [CMIP7-Hackathon Github repository](https://github.com/ACCESS-NRI/CMIP7-Hackathon), and automatically runs each of the hackathon ESMValTool recipes as a PBS job on Gadi.
+**Step 2.** Run the hackathon setup script from any directory. This verifies that your NCI account has access to the required projects on Gadi and that their respective storage locations are mounted, clones the [CMIP7-Hackathon Github repository](https://github.com/ACCESS-NRI/CMIP7-Hackathon), and automatically runs each of the hackathon ESMValTool recipes as PBS jobs on Gadi.
 ```
 check_hackathon
 ```
-Note that this may take up to a minute to finish running.
+You will see a range of checks and processes print to the screen, which may take up to 1 minute to complete. Once you see the "YOU ARE ALL SET!!!" message, everything is setup and ready to go.
 
 ## ESMValTool recipes
 
-Once you have run `check_hackathon` and have recieved the "YOU ARE ALL SET!!!" message in your chosen terminal, you can now do the following:
+You have just started running a suite of ESMValTool recipes! You can now do any of the following:
 
 * Check the status of each of your actively running recipes:
 ```
@@ -41,7 +51,7 @@ qstat -u [username]
 ```
 /scratch/nf33/[username]/esmvaltool_outputs
 ```
-* View ESMValTool recipe logs here:
+* View ESMValTool recipe log files here:
 ```
 /scratch/nf33/[username]/CMIP7-Hackathon/admin/logs
 ```
