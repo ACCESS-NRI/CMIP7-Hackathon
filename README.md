@@ -4,13 +4,19 @@ Welcome to the ACCESS-NRI CMIP7 Hackathon repo.
 
 ## Visual Studio Code
 
-To get the most out of the hackathon exercises, we recommend using Microsoft Visual Studio Code which can be downloaded free for Windows, MacOS and Linux [here](https://code.visualstudio.com/). Additionally, for new VS Code users or those simply wanting a quick refresher, you can;
-- watch our getting started workflow for Gadi video tutorial [here](https://youtu.be/fSxirzDR3iw) (6 min),
-- follow our step-by-step getting started documentation [here](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md).
+To get the most out of the hackathon exercises, we recommend using Microsoft Visual Studio Code which can be downloaded free for Windows, MacOS and Linux [here](https://code.visualstudio.com/). For new VS Code users or those simply wanting a quick refresher, we have created a video and written guide to help you set up VS Code on Gadi. Note that the information is roughly the same, so you can choose either video or written guide to follow along.
+- [Video tutorial: Visual Studio Code Workflow for Gadi](https://youtu.be/fSxirzDR3iw) _(~6 min)_
+- [Written guide: Getting Started Guide for Visual Studio Code with Gadi](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md)
+
+
+_**NOTE:** There are two pieces of information to clarify from the video tutorial that are explained in the written guide:_
+1. _When logging into Gadi for the first time in VS Code, you do not need to write your own config file. You can simply choose the default option that is suggested and VS Code will create one for you. You only need to do this once - the first time you log in._
+2. _In addition to the 3 extensions mentioned in the video, you will need to install a 4th extension to view html files (this is how most of the ESMValTool recipes show output plots). You can see our recommended extension "Live Server" in the [written guide above](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md)._
+
 
 ## Logging into Gadi
 
-The first thing to do is to login to Gadi. You can choose to run the following commands either from your computer's terminal or from the terminal within VS Code. If you follow the above steps to set up VS Code on Gadi, you can skip to the next section ["Set up our environment to run ESMValTool"](#set-up-our-environment-to-run-ESMValTool) below (since the [video](https://youtu.be/fSxirzDR3iw) and [step-by-step guide](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md) already walk you through how to connect to Gadi in VS Code). 
+The first thing to do is to login to Gadi. You can choose to run the following commands either from your computer's terminal or from the terminal within VS Code. If you follow the above steps to set up VS Code on Gadi, you can skip to the next section ["Set up our environment to run ESMValTool"](#set-up-our-environment-to-run-ESMValTool) below (since the [video](https://youtu.be/fSxirzDR3iw) and [written guide](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md) already walk you through how to connect to Gadi in VS Code). 
 
 Log into Gadi using ssh via the command line using your registed NCI *username* and enter your password when prompted. Once you see the welcome note you have successfully logged in. 
 ```
