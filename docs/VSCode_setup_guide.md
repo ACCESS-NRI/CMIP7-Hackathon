@@ -77,52 +77,8 @@ To connect to Gadi, follow these steps to establish and open a remote connection
 
 ## 3. Load ESMValTool modules and set up Hackathon environment
 
-To load all required ESMValTool and [ACCESS-NRI ESMValTool-workflow](https://github.com/ACCESS-NRI/ESMValTool-workflow) components, please enter the following two commands (one after the other) in the VS Code terminal from any directory:
+You can now follow the instructions in the [README](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/README.md) for how to setup your environment to run ESMValTool and how to use ESMValTool recipes. To continue to Step 4 below, you must have at least run the steps under the heading [Set up our environment to run ESMValTool](https://github.com/paigem/CMIP7-Hackathon/blob/main/README.md#set-up-our-environment-to-run-esmvaltool), as these steps will create the folders that we will open below.
 
-```
-module use /g/data/xp65/public/modules [then press ENTER/RETURN]
-```
-followed by:
-```
-module load esmvaltool [then press ENTER/RETURN]
-```
-
-To set up the Hackathon environment (check project membership, mount required storage, create working folders, clone the Hackathon Github repository), please enter the following command in the terminal from any directory:
-```
-check_hackathon [then press ENTER/RETURN]
-```
-You will see a range of checks and processes print to the screen, which may take up to 1 minute to complete. Once you see the "YOU ARE ALL SET!!!" message, everything is setup and ready to go.
-<br><br>
-This process also creates and runs a PBS job on Gadi for each of the Hackathon example ESMValTool recipes. To check the status of these jobs enter the following into the terminal - where [username] is your NCI account username.
-```
-qstat -u [username]
-```
-This will list all currently running ESMValTool recipes.
-<br><br>
-For each recipe, the outputs can be found in:
-```
-/scratch/nf33/[username]/esmvaltool_outputs
-```
-and associated log files can be found in:
-```
-/scratch/nf33/[username]/MIP7-Hackathon/admin/logs
-```
-The full cloned [CMIP7-Hackathon Github repository](https://github.com/ACCESS-NRI/CMIP7-Hackathon) can be found here:
-```
-/scratch/nf33/[username]/CMIP7-Hackathon
-```
-We also include a convenience wrapper function to manually run individual recipes found in the CMIP7-Hackathon Github repository [recipes directory](https://github.com/ACCESS-NRI/CMIP7-Hackathon/tree/main/recipes):
-```
-run_recipe [path-to-recipe]
-```
-For example, to manually run the hackathon `map1` recipe found in `/scratch/nf33/[username]/CMIP7-Hackathon/recipes/ocean/maps`, you can `cd` into the cloned CMIP7-Hackathon Github repository
-```
-cd /scratch/nf33/[username]/CMIP7-Hackathon
-```
-and run the following:
-```
-run_recipe recipes/ocean/maps/map1.yml
-```
 [\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#getting-started-guide-for-visual-studio-code)
 
 ## 4. Create a workspace / open folders on Gadi
