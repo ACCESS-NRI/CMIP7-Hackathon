@@ -15,15 +15,21 @@
 - *0.2* To run the exercises, access to specific projects on Gadi is required. To help things run as smoothly as possible on the day, please log in to the [MyNCI website](https://my.nci.org.au) and join the following projects:
 `nf33`, `xp65`, `fs38`, `oi10`, `al33`, `rr3`, `rt52`, `zz93` and `ct11` **prior** to attending the Hackathon. Please note it can take 1-2 days to receive membership approvals.
 
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_setup_guide.md#access-nri-cmip7-hackathon-are-setup-guide)
+
 ## 1. Open ARE on Gadi
 Go to the [Australian Research Environment](https://are-auth.nci.org.au/) website and login with your **NCI username and password**. If you don't have an NCI account, you can sign up for one at the [MyNCI website](https://my.nci.org.au).
 
 <p align="center"><img src="assets_ARE/login.png" alt="drawing" width="60%"/></p>
 
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_setup_guide.md#access-nri-cmip7-hackathon-are-setup-guide)
+
 ## 2. Start JupyterLab App
 Click on `JupyterLab` under *Featured Apps* to configure a new JupyterLab instance. This option is also available under the *All Apps* section at the bottom of the page and the *Interactive Apps* dropdown located in the top menu.
 
 <p align="center"><img src="assets_ARE/jupyter_select.png" alt="drawing" width="60%"/></p>
+
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_setup_guide.md#access-nri-cmip7-hackathon-are-setup-guide)
 
 ## 3. Configure JupyterLab session
 You will now be presented with the main JupyterLab instance configuration form. Please complete **only** the fields below - leave all other fields blank or to their default values.
@@ -69,6 +75,8 @@ esmvaltool
 
 <p align="center"><img src="assets_ARE/launch.png" alt="drawing" width="60%"/></p>
 
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_setup_guide.md#access-nri-cmip7-hackathon-are-setup-guide)
+
 ## 4. Launch JupyterLab session
 Once you have clicked `Launch` the browser will redirect to the 'interactive sessions' page where you will see your JupyterLab instance details and current status which will look something like this:
 
@@ -79,6 +87,8 @@ Once the JupyterLab instance has started (this usually takes around 30 seconds) 
 <p align="center"><img src="assets_ARE/running.png" alt="drawing" width="60%"/></p>
 
 Click `Open JupyterLab`. This opens the instance a new browser window where you can navigate to the location of the cloned tutorial files.
+
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_setup_guide.md#access-nri-cmip7-hackathon-are-setup-guide)
 
 ## 5. Setup Hackathon ESMValTool environment
 To finalise the system setup, we must run the hackathon setup script. This verifies that your NCI account has access to the required projects on Gadi and that their respective storage locations are mounted, clones the [CMIP7-Hackathon Github repository](https://github.com/ACCESS-NRI/CMIP7-Hackathon), and automatically runs each of the hackathon ESMValTool recipes as PBS jobs on Gadi.
@@ -94,3 +104,5 @@ check_hackathon
 ```
 
 When successful, you will see a range of checks and processes print to the screen, which may take up to 1 minute to complete. Once you see the "YOU ARE ALL SET!!!" message, everything is setup and ready to go.
+
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_setup_guide.md#access-nri-cmip7-hackathon-are-setup-guide)
