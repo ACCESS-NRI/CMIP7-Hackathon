@@ -2,12 +2,12 @@
 <p>Quick-start guide to setting up a JupyterLab session using the Australian Research Environment to run the ACCESS-NRI CMIP7-Hackathon exercises.</p>
 
 ## Quick-links to sections
-- [0. Pre-Workshop preparation](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#0-pre-workshop-preparation)
-- [1. Open ARE on Gadi](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#1-installing-vs-code-extensions)
-- [2. Start JupyterLab App](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#2-open-remote-connection-to-gadi)
-- [3. Configure JupyterLab session](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#3-load-esmvaltool-modules-and-set-up-hackathon-environment)
-- [4. Launch JupyterLab session](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#4-create-a-workspace--open-folders-on-gadi)
-- [5. Setup Hackathon ESMValTool environment](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#5-vs-code-extras)
+- [0. Pre-Workshop preparation](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_setup_guide.md#0-pre-workshop-preparation)
+- [1. Open ARE on Gadi](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_setup_guide.md#1-open-are-on-gadi)
+- [2. Start JupyterLab App](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_setup_guide.md#2-start-jupyterlab-app)
+- [3. Configure JupyterLab session](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_setup_guide.md#3-configure-jupyterlab-session)
+- [4. Launch JupyterLab session](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_setup_guide.md#4-launch-jupyterlab-session)
+- [5. Setup Hackathon ESMValTool environment](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_setup_guide.md#5-setup-hackathon-esmvaltool-environment)
 
 ## 0. Pre-workshop preparation
 
