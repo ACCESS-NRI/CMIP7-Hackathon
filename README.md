@@ -11,8 +11,11 @@ To get the most out of the hackathon exercises, we recommend using Microsoft Vis
 
 _**NOTE:** There are two pieces of information to clarify from the video tutorial that are explained in the written guide:_
 1. _When logging into Gadi for the first time in VS Code, you do not need to write your own config file. You can simply choose the default option that is suggested and VS Code will create one for you. You only need to do this once - the first time you log in._
-2. _In addition to the 3 extensions mentioned in the video, you will need to install a 4th extension to view html files (this is how most of the ESMValTool recipes show output plots). You can see our recommended extension "Live Server" in the [written guide above](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md)._
+2. _In addition to the 3 extensions mentioned in the video, you will need to install a 4th extension to view html files (this is how most of the ESMValTool recipes show output plots). You can see our recommended extension "Live Server" in the [written guide above](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md).
 
+## Australian Research Environment (ARE)
+If it is not possible to use VS Code, hackathon exercises can alternatively be run via the [Australian Research Environment](https://are-auth.nci.org.au/). Please find a written guide to setup ARE for the CMIP7-Hackathon.
+ - [Written guide: ACCESS-NRI CMIP7-Hackathon ARE setup guide](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_setup_guide.md).
 
 ## Logging into Gadi
 
