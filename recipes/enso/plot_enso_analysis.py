@@ -8,12 +8,12 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import os
 
-#import sacpy as scp
+import sacpy as scp
 
 import cartopy.crs as ccrs
 #import matplotlib.pyplot as plt
 #import numpy as np
-#import sacpy.Map as smap
+import sacpy.Map as smap
 from scipy.linalg import svd
 from scipy.signal import welch
 
@@ -39,8 +39,8 @@ def plot_eof2(ssta,ttl,fName,xlon,xlat):
     pcs_amo = plot_eof2(AMO,ttl,fName,310,40)
     '''
 
-    #eof = scp.EOF(np.array(ssta))
-    # eof.solve()
+    eof = scp.EOF(np.array(ssta))
+    eof.solve()
 
     pc = eof.get_pc(npt=2)
     pt = eof.get_pt(npt=2)
@@ -82,7 +82,7 @@ def plot_eof2(ssta,ttl,fName,xlon,xlat):
     fig.colorbar(m1, cax=cb_ax, orientation="horizontal")
 
     plt.savefig(fName+".png",dpi=300)
-    plt.show()
+    #plt.show()
 
     # Return the PCs as a tuple
     return pc
@@ -185,6 +185,20 @@ def main(cfg):
     # Calculate n3 anom for each dataset
     ts_cnl_anm, ts_cnl_clm = calculate_n3_anom(ds_n34_tfile[0].ts.sel(lat=slice(-20,20),lon=slice(120,280)),1061,1080) # make sure the variable name in HadISST is ts, sometimes it is sst.
     ts_obs_anm, ts_obs_clm = calculate_n3_anom(ds_n34_tfile[1].ts.sel(lat=slice(-20,20),lon=slice(120,280)),1980,2000) # make sure the variable name in HadISST is ts, sometimes it is sst.
+
+
+    ## ------------------------------
+    #  EOF analysis and plotting
+
+    ttl = ('ENSO EOF 1','ENSO PC 1','ENSO EOF 2','ENSO PC 2')
+    fName = "enso_anom_eof"
+    pcs_enso = plot_eof2(ts_obs_anm,ttl,fName,210,0)
+    #plt.savefig('HadISST_ENSO_PC1_and_PC2.png', dpi=150)
+
+    ttl = ('CNL: ENSO EOF 1','CNL: ENSO PC 1','CNL: ENSO EOF 2','CNL: ENSO PC 2')
+    fName = "enso_cnl_anom_eof"
+    pcs_enso = plot_eof2(ts_cnl_anm,ttl,fName,210,0)
+    #plt.savefig('CNL_ENSO_PC1_and_PC2.png', dpi=150)
 
 
     ## ------------------------------
