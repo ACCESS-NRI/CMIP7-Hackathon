@@ -15,15 +15,21 @@
 - *0.2* To run the exercises, access to specific projects on Gadi is required. To help things run as smoothly as possible on the day, please log in to the [MyNCI website](https://my.nci.org.au) and join the following projects:
 `nf33`, `xp65`, `fs38`, `oi10`, `al33`, `rr3`, `rt52`, `zz93` and `ct11` **prior** to attending the Hackathon. Please note it can take 1-2 days to receive membership approvals.
 
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_VDI_setup_guide.md#access-nri-cmip7-hackathon-are-virtual-desktop-vdi-setup-guide)
+
 ## 1. Open ARE/VDI on Gadi
 Go to the [Australian Research Environment](https://are-auth.nci.org.au/) website and login with your **NCI username and password**. If you don't have an NCI account, you can sign up for one at the [MyNCI website](https://my.nci.org.au).
 
 <p align="center"><img src="assets_VDI/login.png" alt="drawing" width="60%"/></p>
 
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_VDI_setup_guide.md#access-nri-cmip7-hackathon-are-virtual-desktop-vdi-setup-guide)
+
 ## 2. Start VDI App
 Click on `Virtual Desktop` under *Featured Apps* to configure a new VDI instance. This option is also available under the *All Apps* section at the bottom of the page and the *Interactive Apps* dropdown located in the top menu.
 
 <p align="center"><img src="assets_VDI/vdi_select.png" alt="drawing" width="60%"/></p>
+
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_VDI_setup_guide.md#access-nri-cmip7-hackathon-are-virtual-desktop-vdi-setup-guide)
 
 ## 3. Configure VDI session
 You will now be presented with the main JupyterLab instance configuration form. Please complete **only** the fields below - leave all other fields blank or to their default values.
@@ -52,6 +58,8 @@ scratch/nf33+gdata/nf33+gdata/xp65+gdata/fs38+gdata/oi10+gdata/al33+gdata/rr3+gd
 
 <p align="center"><img src="assets_ARE/launch.png" alt="drawing" width="60%"/></p>
 
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_VDI_setup_guide.md#access-nri-cmip7-hackathon-are-virtual-desktop-vdi-setup-guide)
+
 ## 4. Launch VDI session
 Once you have clicked `Launch` the browser will redirect to the 'interactive sessions' page where you will see your VDI instance details and current status which will initially look something like this:
 
@@ -66,6 +74,8 @@ Additionally there are extra streaming performance related controls here for bot
 Click `Launch VDI Desktop`. This opens the VDI instance a new browser window where you can navigate to the location of the cloned tutorial files.
 
 Depending on which browser you are using, a prompt can appear in the browser at VDI startup stating that ARE is requesting access to your computer clipboard. This is optional, but allowing this access can make transferring copied text and files between your computer and the VDI instance much easier!
+
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_VDI_setup_guide.md#access-nri-cmip7-hackathon-are-virtual-desktop-vdi-setup-guide)
 
 ## 5. Setup Hackathon ESMValTool environment and run recipes
 To finalise the system setup, we must run the hackathon setup scripts. These load the required ESMValTool-workflow dependencies, verify that your NCI account has access to the required projects on Gadi and that their respective storage locations are mounted, clones the [CMIP7-Hackathon Github repository](https://github.com/ACCESS-NRI/CMIP7-Hackathon), and automatically runs each of the hackathon ESMValTool recipes as PBS jobs on Gadi.
@@ -88,3 +98,5 @@ then finally:
 check_hackathon
 ```
 You will see a range of checks and processes print to the screen, which may take up to 1 minute to complete. Once you see the "YOU ARE ALL SET!!!" message, everything is setup and ready to go.
+
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_VDI_setup_guide.md#access-nri-cmip7-hackathon-are-virtual-desktop-vdi-setup-guide)
