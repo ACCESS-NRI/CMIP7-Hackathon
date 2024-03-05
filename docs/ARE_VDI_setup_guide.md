@@ -2,12 +2,12 @@
 <p>Quick-start guide to setting up a JupyterLab session using the Australian Research Environment to run the ACCESS-NRI CMIP7-Hackathon exercises.</p>
 
 ## Quick-links to sections
-- [0. Pre-Workshop preparation](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#0-pre-workshop-preparation)
-- [1. Open ARE on Gadi](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#1-installing-vs-code-extensions)
-- [2. Start JupyterLab App](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#2-open-remote-connection-to-gadi)
-- [3. Configure JupyterLab session](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#3-load-esmvaltool-modules-and-set-up-hackathon-environment)
-- [4. Launch JupyterLab session](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#4-create-a-workspace--open-folders-on-gadi)
-- [5. Setup Hackathon ESMValTool environment](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#5-vs-code-extras)
+- [0. Pre-Workshop preparation](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_VDI_setup_guide.md#0-pre-workshop-preparation)
+- [1. Open ARE/VDI on Gadi](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_VDI_setup_guide.md#1-open-are-on-gadi)
+- [2. Start VDI App](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_VDI_setup_guide.md#2-start-vdi-app)
+- [3. Configure VDI session](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_VDI_setup_guide.md#3-configure-vdi-session)
+- [4. Launch VDI session](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_VDI_setup_guide.md#4-launch-vdi-session)
+- [5. Setup Hackathon ESMValTool environment and run recipes](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_VDI_setup_guide.md#5-setup-hackathon-esmvaltool-environment-and-run-recipes)
 
 ## 0. Pre-workshop preparation
 
@@ -15,7 +15,7 @@
 - *0.2* To run the exercises, access to specific projects on Gadi is required. To help things run as smoothly as possible on the day, please log in to the [MyNCI website](https://my.nci.org.au) and join the following projects:
 `nf33`, `xp65`, `fs38`, `oi10`, `al33`, `rr3`, `rt52`, `zz93` and `ct11` **prior** to attending the Hackathon. Please note it can take 1-2 days to receive membership approvals.
 
-## 1. Open ARE on Gadi
+## 1. Open ARE/VDI on Gadi
 Go to the [Australian Research Environment](https://are-auth.nci.org.au/) website and login with your **NCI username and password**. If you don't have an NCI account, you can sign up for one at the [MyNCI website](https://my.nci.org.au).
 
 <p align="center"><img src="assets_VDI/login.png" alt="drawing" width="60%"/></p>
@@ -47,7 +47,7 @@ scratch/nf33+gdata/nf33+gdata/xp65+gdata/fs38+gdata/oi10+gdata/al33+gdata/rr3+gd
 
 <p align="center"><img src="assets_VDI/project.png" alt="drawing" width="60%"/></p>
 
-- *3.7* Click `Launch` to start your JupyterLab instance.
+- *3.5* Click `Launch` to start your JupyterLab instance.
 
 
 <p align="center"><img src="assets_ARE/launch.png" alt="drawing" width="60%"/></p>
