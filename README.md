@@ -16,7 +16,7 @@ _**NOTE:** There are two pieces of information to clarify from the video tutoria
 ## Australian Research Environment (ARE)
 If it is not possible to use VS Code, hackathon exercises can alternatively be run via either an [Australian Research Environment](https://are-auth.nci.org.au/) JupyterLab or an [Australian Research Environment](https://are-auth.nci.org.au/) Virtual Desktop (VDI) session.. We have created a written guide to setup each of these for the CMIP7-Hackathon below.
 - [Written guide: ACCESS-NRI CMIP7-Hackathon ARE JupyterLab setup guide](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_setup_guide.md).
-- [Written guide: ACCESS-NRI CMIP7-Hackathon ARE Virtual Desktop (VDI) setup guide](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_setup_guide.md).
+- [Written guide: ACCESS-NRI CMIP7-Hackathon ARE Virtual Desktop (VDI) setup guide](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_VDI_setup_guide.md).
 
 ## Logging into Gadi
 
