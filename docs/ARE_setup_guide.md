@@ -1,5 +1,5 @@
 # ACCESS-NRI CMIP7-Hackathon ARE setup guide
-<p>Quick-start guide to setting up a JupyterLab session using the Australian Research Environment to run the ACCESS-NRI CMIP7-Hackathon exercises.</p>
+<p>Quick-start guide to setting up a JupyterLab session using the Australian Research Environment  to run the ACCESS-NRI CMIP7-Hackathon exercises.</p>
 
 ## Quick-links to sections
 - [0. Pre-Workshop preparation](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_setup_guide.md#0-pre-workshop-preparation)
