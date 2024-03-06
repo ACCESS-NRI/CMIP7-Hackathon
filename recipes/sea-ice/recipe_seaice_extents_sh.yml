@@ -2,7 +2,7 @@
 
 ---
 documentation:
-  title: sea ice area recipe
+  title: SH sea ice area recipe
   description: |
     This is an example recipe, for use in 
     CMIP7 hackathon 2024, CSIRO Aspendale.
@@ -34,7 +34,7 @@ diagnostics:
     description: sea ice area and mapping sea ice concentration
     variables:
     ## 2 variables - sea ice concentration and cell area to compute sea ice area
-      aus_sst:
+      si_fraction:
         short_name: siconc
         mip: SImon
       area:
