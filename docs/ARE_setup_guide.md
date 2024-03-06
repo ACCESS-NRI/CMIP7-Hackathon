@@ -46,7 +46,7 @@ You will now be presented with the main JupyterLab instance configuration form. 
 
 <p align="center"><img src="assets_ARE/project.png" alt="drawing" width="60%"/></p>
 
-- *3.4* **Storage**: This is the list of project data storage locations required to complete the hackathon exercises. In ARE, storage locations need to be explicitly defined to access these data from within a JupyterLab instance. Please copy and paste the following string listing into the storage input field:
+- *3.4* **Storage**: This is the list of project data storage locations required to complete the hackathon exercises. In ARE, storage locations need to be explicitly defined to access these data from within a JupyterLab instance. Please copy and paste the following string in its entirety into the storage input field:
 ```
 scratch/nf33+gdata/nf33+gdata/xp65+gdata/fs38+gdata/oi10+gdata/al33+gdata/rr3+gdata/rt52+gdata/zz93+gdata/ct11
 ```
@@ -82,11 +82,11 @@ Once you have clicked `Launch` the browser will redirect to the 'interactive ses
 
 <p align="center"><img src="assets_ARE/queue.png" alt="drawing" width="60%"/></p>
 
-Once the JupyterLab instance has started (this usually takes around 30 seconds) and this status window should update and look something like the following, reporting that the instance has started and the time remaining. More detailed information on the instance can be accessed by clicking the `Session ID` link.
+Once the JupyterLab instance has started (this usually takes around 30 seconds), this status window should update and look something like the following, reporting that the instance has started and the time remaining. More detailed information on the instance can be accessed by clicking the `Session ID` link.
 
 <p align="center"><img src="assets_ARE/running.png" alt="drawing" width="60%"/></p>
 
-Click `Open JupyterLab`. This opens the instance a new browser window where you can navigate to the location of the cloned tutorial files.
+Click `Open JupyterLab`. This opens the instance in a new browser window where you can navigate to the location of the cloned tutorial files.
 
 [\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_setup_guide.md#access-nri-cmip7-hackathon-are-setup-guide)
 
