@@ -14,7 +14,7 @@ _**NOTE:** There are two pieces of information to clarify from the video tutoria
 2. _In addition to the 3 extensions mentioned in the video, you will need to install a 4th extension to view html files (this is how most of the ESMValTool recipes show output plots). You can see our recommended extension "Live Server" in the [written guide above](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md).
 
 ## Australian Research Environment (ARE)
-If it is not possible to use VS Code, hackathon exercises can alternatively be run via either an [Australian Research Environment](https://are-auth.nci.org.au/) JupyterLab or an [Australian Research Environment](https://are-auth.nci.org.au/) Virtual Desktop (VDI) session.. We have created a written guide to setup each of these for the CMIP7-Hackathon below.
+If it is not possible to use VS Code, hackathon exercises can alternatively be run via either an [Australian Research Environment](https://are-auth.nci.org.au/) JupyterLab or an [Australian Research Environment](https://are-auth.nci.org.au/) Virtual Desktop (VDI) session. We have created a written guide to setup each of these for the CMIP7-Hackathon below.
 - [Written guide: ACCESS-NRI CMIP7-Hackathon ARE JupyterLab setup guide](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_setup_guide.md).
 - [Written guide: ACCESS-NRI CMIP7-Hackathon ARE Virtual Desktop (VDI) setup guide](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_VDI_setup_guide.md).
 
