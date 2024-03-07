@@ -75,7 +75,7 @@ N.B. You can have multiple host connections can exist in your config file with t
 
 You can then change the text next to the `Host` tag to any unique string that does not contain spaces. In example below, each host name string has been renamed to unique values.
 
-<p align="center"><img src="assets_vscode/config_rename.png" alt="drawing" width="90%"/></p>
+<p align="center"><img src="assets_vscode/config_rename.png" alt="drawing" width="70%"/></p>
 
 - *2.5* You will then be prompted to enter your NCI account password. Once connected, the blue button in the bottom left-hand corner will say `SSH: gadi.nci.org.au`. VS Code also automatically opens a live terminal (bottom right) in your `/home` folder. Great news, you are now connected to Gadi!
 
