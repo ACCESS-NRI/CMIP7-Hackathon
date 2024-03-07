@@ -69,7 +69,7 @@ To connect to Gadi, follow these steps to establish and open a remote connection
 
 <p align="center"><img src="assets_vscode/open_remote4.png" alt="drawing" width="90%"/></p>
 
-N.B. You can have multiple host connections can exist in your config file with the same name (`gadi.nci.org.au` for example). To rename these you must open the config selected above
+N.B. You can have multiple host connections can exist in your config file with the same name (`gadi.nci.org.au` for example). To rename these you must open the config file selected in step 2.4 above and change the `Host` text..
 
 <p align="center"><img src="assets_vscode/config.png" alt="drawing" width="90%"/></p>
 
