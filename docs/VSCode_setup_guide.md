@@ -69,6 +69,10 @@ To connect to Gadi, follow these steps to establish and open a remote connection
 
 <p align="center"><img src="assets_vscode/open_remote4.png" alt="drawing" width="90%"/></p>
 
+N.B. You can have multiple host connections can exist in your config file with the same name (`gadi.nci.org.au` for example). To rename these you must open the config selected above
+
+<p align="center"><img src="assets_vscode/config.png" alt="drawing" width="90%"/></p>
+
 - *2.5* You will then be prompted to enter your NCI account password. Once connected, the blue button in the bottom left-hand corner will say `SSH: gadi.nci.org.au`. VS Code also automatically opens a live terminal (bottom right) in your `/home` folder. Great news, you are now connected to Gadi!
 
 <p align="center"><img src="assets_vscode/open_remote5.png" alt="drawing" width="90%"/></p>
