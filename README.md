@@ -2,7 +2,7 @@
 
 Welcome to the ACCESS-NRI CMIP7 Hackathon repo.
 
-## Visual Studio Code
+## Visual Studio Code (VS Code)
 
 To get the most out of the hackathon exercises, we recommend using Microsoft Visual Studio Code which can be downloaded free for Windows, MacOS and Linux [here](https://code.visualstudio.com/). For new VS Code users or those simply wanting a quick refresher, we have created a video and written guide to help you set up VS Code on Gadi. Note that the information is roughly the same, so you can choose either video or written guide to follow along.
 - [Video tutorial: Visual Studio Code Workflow for Gadi](https://youtu.be/fSxirzDR3iw) _(~6 min)_
