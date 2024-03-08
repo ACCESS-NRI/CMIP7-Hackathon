@@ -54,13 +54,13 @@ https://www.youtube.com/watch?v=YSs6A0H1MwE&list=PLFjfi2xLaFpJp59LvDc1upQsj_xzFl
 <br>
 
 
-**ESMValTool-workflow guide and examples**\ 
+**ESMValTool-workflow guide and examples**\
 https://access-hive.org.au/model_evaluation/model_evaluation_on_gadi/model_evaluation_on_gadi_esmvaltool/  
 - This written guide on the ACCESS NRI ACCESS-Hive has information about what ESMValTool-workflow is and what NCI project memberships are required to access different datasets. It also has some examples of using ESMValTool-workflow on NCI. 
 
 <br>
 
-**ACCESS-Hive community forum category for CMIP7 Evaluation Hackathon**\ 
+**ACCESS-Hive community forum category for CMIP7 Evaluation Hackathon**\
 https://forum.access-hive.org.au/c/cmip7/cmip7-access-evaluation-hackathon/77 
 - This is a designated category on the ACCESS-Hive community forum for discussions relevant to the hackathon. 
  
