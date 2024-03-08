@@ -12,11 +12,11 @@ https://github.com/ACCESS-NRI/CMIP7-Hackathon/
 
 **Setup guides to run ESMValTool on NCI Gadi using VS Code and ARE**
 - VS Code Setup Guide \
-https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md 
+https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/1_VSCode_setup_guide_RECOMMENDED.md 
 - ARE JupyterLab Setup Guide \
-https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_setup_guide.md 
+https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/2_ARE_JupyterLab_setup_guide.md 
 - ARE Virtual Desktop (VDI) Setup Guide \
-https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_VDI_setup_guide.md 
+https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/3_ARE_VDI_setup_guide.md 
 
 <br>
 
