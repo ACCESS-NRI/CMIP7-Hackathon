@@ -6,7 +6,7 @@ Welcome to the ACCESS-NRI CMIP7 Hackathon repo.
 
 To get the most out of the hackathon exercises, we recommend using Microsoft Visual Studio Code which can be downloaded free for Windows, MacOS and Linux [here](https://code.visualstudio.com/). For new VS Code users or those simply wanting a quick refresher, we have created a video and written guide to help you set up VS Code on Gadi. Note that the information is roughly the same, so you can choose either video or written guide to follow along.
 - [Video tutorial: Visual Studio Code Workflow for Gadi](https://youtu.be/fSxirzDR3iw) _(~6 min)_
-- [Written guide: Getting Started Guide for Visual Studio Code with Gadi](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md)
+- [Written guide: Getting Started Guide for Visual Studio Code with Gadi](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/1_VSCode_setup_guide_RECOMMENDED.md)
 
 
 _**NOTE:** There are two pieces of information to clarify from the video tutorial that are explained in the written guide:_
@@ -15,8 +15,8 @@ _**NOTE:** There are two pieces of information to clarify from the video tutoria
 
 ## Australian Research Environment (ARE)
 If it is not possible to use VS Code, hackathon exercises can alternatively be run via either an [Australian Research Environment](https://are-auth.nci.org.au/) JupyterLab or an [Australian Research Environment](https://are-auth.nci.org.au/) Virtual Desktop (VDI) session. We have created a written guide to setup each of these for the CMIP7-Hackathon below.
-- [Written guide: ACCESS-NRI CMIP7-Hackathon ARE JupyterLab setup guide](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_setup_guide.md).
-- [Written guide: ACCESS-NRI CMIP7-Hackathon ARE Virtual Desktop (VDI) setup guide](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/ARE_VDI_setup_guide.md).
+- [Written guide: ACCESS-NRI CMIP7-Hackathon ARE JupyterLab setup guide](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/2_ARE_JupyterLab_setup_guide.md).
+- [Written guide: ACCESS-NRI CMIP7-Hackathon ARE Virtual Desktop (VDI) setup guide](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/3_ARE_VDI_setup_guide.md).
 
 ## Logging into Gadi
 
