@@ -2,12 +2,12 @@
 <p>This is an introductory guide to setting up and using Microsoft Visual Studio Code (often referred to as VS Code) to interact with Gadi and run ESMValTool recipes for the ACCESS-NRI CMIP7-Hackathon.</p>
 
 ## Quick-links to sections
-- [0. Pre-Workshop preparation](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#0-pre-workshop-preparation)
-- [1. Installing VS Code extensions](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#1-installing-vs-code-extensions)
-- [2. Open remote connection to Gadi](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#2-open-remote-connection-to-gadi)
-- [3. Load ESMValTool modules and set up Hackathon environment](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#3-load-esmvaltool-modules-and-set-up-hackathon-environment)
-- [4. Create a workspace / open folders on Gadi](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#4-create-a-workspace--open-folders-on-gadi)
-- [5. VS Code extras](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#5-vs-code-extras)
+- [0. Pre-Workshop preparation](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/1_VSCode_setup_guide_RECOMMENDED.md#0-pre-workshop-preparation)
+- [1. Installing VS Code extensions](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/1_VSCode_setup_guide_RECOMMENDED.md#1-installing-vs-code-extensions)
+- [2. Open remote connection to Gadi](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/1_VSCode_setup_guide_RECOMMENDED.md#2-open-remote-connection-to-gadi)
+- [3. Load ESMValTool modules and set up Hackathon environment](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/1_VSCode_setup_guide_RECOMMENDED.md#3-load-esmvaltool-modules-and-set-up-hackathon-environment)
+- [4. Create a workspace / open folders on Gadi](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/1_VSCode_setup_guide_RECOMMENDED.md#4-create-a-workspace--open-folders-on-gadi)
+- [5. VS Code extras](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/1_VSCode_setup_guide_RECOMMENDED.md#5-vs-code-extras)
 
 ## 0. Pre-workshop preparation
 
@@ -16,7 +16,7 @@
 `nf33`, `xp65`, `fs38`, `oi10`, `al33`, `rr3`, `rt52`, `zz93` and `ct11` **prior** to attending the Hackathon. Please note it can take 1-2 days to receive membership approvals.
 - *0.3* Download and install Microsoft Visual Studio Code on your local system. VS Code can be downloaded from [this page](https://code.visualstudio.com/).
 
-[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#getting-started-guide-for-visual-studio-code)
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/1_VSCode_setup_guide_RECOMMENDED.md#getting-started-guide-for-visual-studio-code-vs-code)
 
 ## 1. Installing VS Code extensions
 Out of the box, VS Code doesn't do everything we need it to - so we must install some software extensions to get the most out of the Hackathon.
@@ -47,7 +47,7 @@ This extension allows us to view, edit and run *Jupyter Notebooks* within VS Cod
 
 <p align="center"><img src="assets_vscode/extensions_jupyter.png" alt="drawing" width="90%"/></p>
 
-[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#getting-started-guide-for-visual-studio-code)
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/1_VSCode_setup_guide_RECOMMENDED.md#getting-started-guide-for-visual-studio-code-vs-code)
 
 ## 2. Open remote connection to Gadi
 
@@ -81,13 +81,13 @@ You can then change the text next to the `Host` tag to any unique string that do
 
 <p align="center"><img src="assets_vscode/open_remote5.png" alt="drawing" width="90%"/></p>
 
-[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#getting-started-guide-for-visual-studio-code)
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/1_VSCode_setup_guide_RECOMMENDED.md#getting-started-guide-for-visual-studio-code-vs-code)
 
 ## 3. Load ESMValTool modules and set up Hackathon environment
 
 You can now follow the instructions in the [README](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/README.md) for how to setup your environment to run ESMValTool and how to use ESMValTool recipes. To continue to Step 4 below, you must have at least run the steps under the heading [Set up our environment to run ESMValTool](https://github.com/paigem/CMIP7-Hackathon/blob/main/README.md#set-up-our-environment-to-run-esmvaltool), as these steps will create the folders that we will open below.
 
-[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#getting-started-guide-for-visual-studio-code)
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/1_VSCode_setup_guide_RECOMMENDED.md#getting-started-guide-for-visual-studio-code-vs-code)
 
 ## 4. Create a workspace / open folders on Gadi
 
@@ -111,7 +111,7 @@ You can add multiple unique folders to the current workspace by right clicking a
 
 Now that you have a workspace setup, we suggest adding the above mentioned `esmvaltool_outputs` and `logs` folders (replacing [username] with your NCI account username) for quick access.
 
-[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#getting-started-guide-for-visual-studio-code)
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/1_VSCode_setup_guide_RECOMMENDED.md#getting-started-guide-for-visual-studio-code-vs-code)
 
 ## 5. VS Code extras
 
@@ -126,4 +126,4 @@ If you have multiple folders open in your workspace, you will first be prompted 
 
 <p align="center"><img src="assets_vscode/terminals.png" alt="drawing" width="90%"/></p>
 
-[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/VSCode_setup_guide.md#getting-started-guide-for-visual-studio-code)
+[\[Back to top\]](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/1_VSCode_setup_guide_RECOMMENDED.md#getting-started-guide-for-visual-studio-code-vs-code)
