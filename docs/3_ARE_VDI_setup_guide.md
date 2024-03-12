@@ -51,7 +51,17 @@ You will now be presented with the main VDI instance configuration form. Please 
 scratch/nf33+gdata/nf33+gdata/xp65+gdata/fs38+gdata/oi10+gdata/al33+gdata/rr3+gdata/rt52+gdata/zz93+gdata/ct11
 ```
 
-<p align="center"><img src="assets_VDI/project.png" alt="drawing" width="60%"/></p>
+<p align="center"><img src="assets_VDI/storage.png" alt="drawing" width="60%"/></p>
+
+- *3.5* **Click** `Advanced options ...`
+
+- *3.6* **PBS flags**: The `xp65` conda environment is a containerised environment that requires the `SINGULARITY_OVERLAYIMAGE` environment variable to be defined. Please copy and paste the following string in its entirety into the PBS flags input field:
+
+```
+-v SINGULARITY_OVERLAYIMAGE=/g/data/xp65/public/apps/med_conda/envs/access-med-0.3.sqsh
+```
+
+<p align="center"><img src="assets_VDI/pbsflag.png" alt="drawing" width="60%"/></p>
 
 - *3.5* Click `Launch` to start your VDI instance.
 
