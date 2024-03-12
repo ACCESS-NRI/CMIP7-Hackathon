@@ -61,7 +61,7 @@ scratch/nf33+gdata/nf33+gdata/xp65+gdata/fs38+gdata/oi10+gdata/al33+gdata/rr3+gd
 -v SINGULARITY_OVERLAYIMAGE=/g/data/xp65/public/apps/med_conda/envs/access-med-0.3.sqsh
 ```
 
-<p align="center"><img src="assets_VDI/pbsflag.png" alt="drawing" width="60%"/></p>
+<p align="center"><img src="assets_VDI/pbsflags.png" alt="drawing" width="60%"/></p>
 
 - *3.5* Click `Launch` to start your VDI instance.
 
