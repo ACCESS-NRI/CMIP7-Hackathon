@@ -1,6 +1,11 @@
 # ACCESS-NRI CMIP7-Hackathon
 
-Welcome to the ACCESS-NRI CMIP7 Hackathon repo.
+Welcome to the ACCESS-NRI CMIP7 Hackathon repo! Thanks to everyone who joined for our evaluation hackathon, held March 12-14, 2024.
+
+## Links from the hackathon
+- [Hackathon agenda](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/main/docs/Hackathon%20Agenda.pdf)
+- [Notes taken during general sessions](https://docs.google.com/document/d/11hlSrGoAdl1qKTZIgGL0BpJhRWoB5nUVB2kf0wxQ06w/edit?usp=share_link) (thanks to Sramana, Dhruv, and Aditya for these excellent notes! :clap:)
+- [Summary of all the breakout group notes](https://docs.google.com/document/d/1TzUQmt2eJj1gOr2wSl3WK_LDqBBSFx7-tl4HZeljW7Q/edit?usp=share_link) (collated into a single document)
 
 ## Visual Studio Code (VS Code)
 
