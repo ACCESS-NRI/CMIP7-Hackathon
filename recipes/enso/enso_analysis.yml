@@ -26,4 +26,4 @@ diagnostics:
       - {dataset: HadISST, project: OBS, type: reanaly, version: 1, tier: 2}
     scripts:
       plotting:
-        script: /scratch/nf33/mgt562/CMIP7-Hackathon/recipes/enso/plot_enso_analysis.py
+        script: /recipes/enso/plot_enso_analysis.py
