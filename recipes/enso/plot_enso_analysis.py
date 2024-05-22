@@ -7,22 +7,20 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 import os
-
 import sacpy as scp
-
 import cartopy.crs as ccrs
-#import matplotlib.pyplot as plt
-#import numpy as np
 import sacpy.Map as smap
+
 from scipy.linalg import svd
 from scipy.signal import welch
 
 # ESMValTool requirements
 import logging
+
 from esmvaltool.diag_scripts.shared import run_diagnostic, Datasets, Variables
 from esmvaltool.diag_scripts.shared._base import get_plot_filename
 
-# This part sends debug statements to stdout
+# Sends debug statements to stdout
 logger = logging.getLogger(os.path.basename(__file__))
 
 
@@ -48,7 +46,7 @@ def plot_eof2(ssta,ttl,fName,xlon,xlat):
     lon, lat = np.array(ssta.lon), np.array(ssta.lat)
 
     # Check and ensure positive pt at 90W 0N
-    lon_index = np.abs(lon - xlon).argmin()  # Find the index for 120W
+    lon_index = np.abs(lon - xlon).argmin()    # Find the index for 120W
     lat_index = np.abs(lat - xlat).argmin()    # Find the index for 0N
 
     if pt[0, lat_index, lon_index] < 0:
@@ -64,7 +62,6 @@ def plot_eof2(ssta,ttl,fName,xlon,xlat):
     ax.contour(m1, colors="black")
     ax.set_title(ttl[0])
     ax2 = fig.add_subplot(222)
-#    ax2.plot(ssta.time, pc[0])
     ax2.plot(pc[0])
     ax2.grid()
     ax2.set_title(ttl[1])
@@ -73,7 +70,6 @@ def plot_eof2(ssta,ttl,fName,xlon,xlat):
     ax3.contour(m2, colors="black")
     ax3.set_title(ttl[2])
     ax4 = fig.add_subplot(224)
-#    ax4.plot(ssta.time, pc[1])
     ax4.plot(pc[1])
     ax4.grid()
     ax4.set_title(ttl[3])
@@ -82,7 +78,7 @@ def plot_eof2(ssta,ttl,fName,xlon,xlat):
     fig.colorbar(m1, cax=cb_ax, orientation="horizontal")
 
     plt.savefig(fName+".png",dpi=300)
-    #plt.show()
+    # plt.show()
 
     # Return the PCs as a tuple
     return pc
