@@ -20,8 +20,6 @@ diagnostics:
     variables:
       ts:
         short_name: "ts"
-        # start_year: 1980
-        # end_year: 2000
         reference_dataset: HadISST
         mip: Amon
     additional_datasets:
