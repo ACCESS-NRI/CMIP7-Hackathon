@@ -1,5 +1,4 @@
-# ESMValTool 
-# run on normalbw with 5 ncpus run time <1 min, 1cpu <2mins
+# ACCESS-NRI / CSIRO ENSO analyses.
 ---
 documentation:
   title: ENSO analysis
