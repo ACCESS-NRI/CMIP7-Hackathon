@@ -1,4 +1,3 @@
-# ACCESS-NRI CMIP7-Hackathon ARE Virtual Desktop (VDI) setup guide
 <p>Quick-start guide to setting up a virtual desktop (VDI) session using the Australian Research Environment (ARE) to run the ACCESS-NRI CMIP7-Hackathon exercises.</p>
 
 ## Quick-links to sections
