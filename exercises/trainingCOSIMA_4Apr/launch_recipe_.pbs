@@ -1,0 +1,23 @@
+#!/bin/bash -l 
+#PBS -S /bin/bash
+
+#PBS -l storage=gdata/fs38+gdata/oi10+gdata/xp65+gdata/ct11
+
+
+#PBS -N recipe_esmvaltool
+#PBS -W block=true
+
+#PBS -l wd
+#PBS -q normal
+#PBS -l walltime=02:00:00
+#PBS -l mem=128GB
+#PBS -l ncpus=2
+#PBS -l jobfs=50GB
+
+
+module use /g/data/xp65/public/modules
+module load esmvaltool-workflow
+
+
+esmvaltool run --config_file /home/189/fc6164/esmValTool/config-fc-copy.yml  recipe_enso_lifecycle.yml
+

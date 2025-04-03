@@ -1,6 +1,6 @@
 # ACCESS-NRI CMIP7-Hackathon
 
-Welcome to the ACCESS-NRI CMIP7 Hackathon repo to be held on the 2nd of September 2024 
+Welcome to the ACCESS-NRI CMIP7 Hackathon repo to be held on the 2nd of September 2024. You can find the carpentries tutorial material [here](https://access-nri.github.io/CMIP7_MED_Hackathon/)
 
 You can find the material used for the hackathon held March 12-14, 2024 [here](https://github.com/ACCESS-NRI/CMIP7-Hackathon/blob/CSIRO_03-2024_Hackathon_archive).
 

@@ -1,0 +1,84 @@
+# ESMValTool enso lifecycle
+# 
+---
+documentation:
+  description: ENSO CLIVAR metrics - basic ENSO characteristics
+  title: Reproducing some basic ENSO characteristics metrics by Yann Planton
+  authors:
+    - chun_felicity
+    # - beucher_romain
+    # - sullivan_arnold
+  maintainer:
+    - chun_felicity
+
+datasets:
+  - {dataset: ACCESS-ESM1-5, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: ACCESS-CM2, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: BCC-CSM2-MR, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CAS-ESM2-0, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CESM2-FV2, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CESM2-WACCM-FV2, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CESM2-WACCM, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CESM2, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CMCC-CM2-HR4, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CMCC-CM2-SR5, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CMCC-ESM2, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: CanESM5, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: FGOALS-g3, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: FIO-ESM-2-0, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: GISS-E2-1-H, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: MCM-UA-1-0, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: MIROC6, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: MPI-ESM-1-2-HAM, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: MPI-ESM1-2-HR, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: MPI-ESM1-2-LR, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: MRI-ESM2-0, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: NorCPM1, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: NorESM2-LM, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: NorESM2-MM, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: SAM0-UNICON, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+  - {dataset: TaiESM1, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn, start_year: 1850, end_year: 2014}
+
+  
+preprocessors:
+  ssta_enso: &base_enso
+    custom_order: true
+    convert_units:
+      units: degC
+    regrid:
+      target_grid: 1x1 
+      scheme: linear
+    extract_region: &nino34
+      start_longitude: 190.
+      end_longitude: 240.
+      start_latitude: -5.
+      end_latitude: 5.
+    rolling_window_statistics:
+      coordinate: time
+      operator: mean
+      window_length: 5
+    anomalies:
+      period: monthly
+
+  ssta_ninoarea:
+    <<: *base_enso
+    area_statistics:
+      operator: mean
+
+
+diagnostics:
+  diagnostic_metrics:
+    description: run preprocessors on variables for ENSO metrics
+    variables:
+      tos_lifdur1: # lifecycle
+        short_name: tos
+        mip: Omon
+        preprocessor: ssta_ninoarea
+        additional_datasets:
+          - {dataset: HadISST, project: OBS, type: reanaly, tier: 2}
+
+    scripts:
+      plot_script:
+        script: /home/189/fc6164/esmValTool/repos/Training_COSIMA_esmvaltool_obs/examples/diagscript/enso_lifecycle_diagnostic.py
+
+
